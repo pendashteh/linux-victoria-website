@@ -49,7 +49,7 @@ This event will be hosted via our self-hosted BigBlueButton (BBB) platform.
 
 We look forward to seeing you there — in Morwell or online — as we celebrate Linux, open source, and the power of community across Victoria! 🐧
 
-<button onclick="shareEvent()" class="btn btn-outline-primary">📤 Share This Event</button>
+<button onclick="shareEvent()" class="btn btn-outline-primary d-flex d-lg-none">📤 Share This Event</button>
 
 <script>
   function shareEvent() {
