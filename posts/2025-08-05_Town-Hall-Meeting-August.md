@@ -1,7 +1,7 @@
-## Linux Victoria - Town Hall Meeting June
+## Linux Victoria - Town Hall Meeting August
 
-Tuesday, June 3rd, 2025
-7:00 PM to 9:00 PM AEST
+Tuesday, August 5th, 2025 
+7:00 PM to 9:00 PM AEST
 
 ## Details
 
@@ -24,15 +24,15 @@ Link to join:
 We use a self-hosted BBB instance for this meeting.
 
 ## Date
-Tuesday, June 3, 2025  
-7:00 PM to 9:00 PM AEST
+
+**Tuesday, August 5, 2025**  
+**7:00 PM to 9:00 PM AEST**
 
 ## Schedule
 
-19:00 Meet and greet
-19:30 Opening
+19:00 Meet and greet  
+19:30 Opening  
 20:00 Closure
 
-
-Meetup Link:
-https://www.meetup.com/linux-users-of-victoria/events/307692794/
+**Meetup Link:**  
+[https://www.meetup.com/linux-users-of-victoria/events/308849027/](https://www.meetup.com/linux-users-of-victoria/events/308849027/)

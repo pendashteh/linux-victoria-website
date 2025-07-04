@@ -5,14 +5,24 @@
   },
   "eventCards": [
     {
-      "title": "2025-08-05 Town Hall Meeting - August",
+      "title": "Linux Victoria - Town Hall Meeting - August",
       "date": "Tuesday, August 5, 2025",
       "time": "7:00 PM to 9:00 PM AEST",
       "location": "Online",
-      "link": "https://www.meetup.com/linux-users-of-victoria/events/308849027/",
+      "link": "/posts/2025-08-05_Town-Hall-Meeting-August",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "https://secure.meetupstatic.com/photos/event/c/4/4/1/highres_528890241.webp?w=384",
       "alt": "Town Hall"
+    }, 
+    {
+      "title": "Linux Regional Summit",
+      "date": "Monday, August 25, 2025",
+      "time": "10:00 AM to 5:00 PM AEST",
+      "location": "Gippsland Innovation Centre, Victoria (Hybrid Event)",
+      "link": "/posts/2025-08-25_Linux_Regional_Summit",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/Linux_Regional_Summit_2025.png",
+      "alt": "Linux Regional Summit 2025"
     },    
     {
       "title": "Install Fest",
