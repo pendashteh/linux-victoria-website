@@ -5,7 +5,7 @@
 
 **Monday, August 25th, 2025**  
 **10:00 AM to 5:00 PM AEST**  
-**Gippsland Innovation Centre, Morwell, Victoria (Hybrid Event)**
+**Morwell Innovation Centre, Morwell, Victoria (Hybrid Event)**
 
 ## Details
 
@@ -50,6 +50,9 @@ This event will be hosted via our self-hosted BigBlueButton (BBB) platform.
 We look forward to seeing you there — in Morwell or online — as we celebrate Linux, open source, and the power of community across Victoria! 🐧
 
 <button onclick="shareEvent()" class="btn btn-outline-primary d-flex d-lg-none">📤 Share This Event</button>
+
+
+<a class="btn btn-primary" href="/linux-regional-summit">View the Linux Regional Summit Poster</a>
 
 <script>
   function shareEvent() {
