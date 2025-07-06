@@ -9,7 +9,7 @@
 
 ## Details
 
-Join us for the **Linux Regional Summit 2025**! A special one-day event hosted in Morwell, Gippsland at the Gippsland Innovation Centre.
+Join us for the **Linux Regional Summit 2025**! A special one-day event hosted at the **Morwell Innovation Centre**, in the heart of Gippsland, Victoria.
 
 Held on **Linux's birthday**, this summit celebrates the spirit of open source, the growth of Linux in Australia, and the importance of extending tech engagement into **regional Victoria**.
 
@@ -33,7 +33,7 @@ This is a **hybrid event**, so whether you're joining us in person in Morwell or
 ## How To Join
 
 📍 **In Person:**  
-Gippsland Innovation Centre, Morwell, Victoria
+Morwell Innovation Centre, Morwell, Victoria
 
 💻 **Online Access:**  
 [Go to e-venue and Join Online](https://venue.electronworkshop.com.au/r/linux-victoria)  
