@@ -16,7 +16,7 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 **Date:** Tuesday, July 8, 2025
 
-**Time:** 7:00 PM (AEST)
+**Time:** 9:00 PM (AEST)
 
 **Location:** Online at [Electron Workshop eVenue](https://electronworkshop.com.au/goto/venue/)
 
