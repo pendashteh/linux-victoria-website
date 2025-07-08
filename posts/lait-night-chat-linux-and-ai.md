@@ -3,6 +3,7 @@ title: "Introducing LAIT Night Chats: Linux and AI Tuesday Conversations"
 date: 2025-07-08
 tags: ["linux", "ai", "community", "meetup"]
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
+preview_image: "/assets/images/LAIT_night_banner.png"
 ---
 
 # LAIT Night Chats: Linux & AI Tuesday Conversations! 
