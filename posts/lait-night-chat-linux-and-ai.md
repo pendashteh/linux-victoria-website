@@ -15,7 +15,7 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 **LAIT Night Chat No. 1**
 
-**Date:** Tuesday, July 8, 2025
+**Date:** {{ "now" | nextWeekday: 2 | date: "%A, %B %e, %Y" }}
 
 **Time:** 9:00 PM (AEST)
 

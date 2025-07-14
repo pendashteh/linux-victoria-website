@@ -18,11 +18,22 @@ layout: layout.html
                             <div class="col-md-7">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ event.title }}</h5>
-                                    {% if event.date %}<p class="card-text mb-0">{{ event.date }}</p>{% endif %}
-                                    {% if event.time %}<p class="card-text mb-0">{{ event.time }}</p>{% endif %}
+                                    {% if event.weekday %}
+                                    <p class="card-text mb-0">
+                                        {{ "now" | nextWeekday: event.weekday | date: "%A, %B %e, %Y" }}
+                                    </p>
+                                    {% elsif event.date contains "Date to be announced" %}
+                                    <p class="card-text mb-0">Date to be announced</p>
+                                    {% elsif event.date %}
+                                    <p class="card-text mb-0">{{ event.date }}</p>
+                                    {% endif %}
+                                    {% if event.time %}
+                                    <p class="card-text mb-0">{{ event.time }}</p>
+                                    {% endif %}
                                     <p class="card-text">Location: {{ event.location }}</p>
-                                    <a class="btn btn-sm btn-primary stretched-link" href="{{ event.link }}">Read
-                                        Details</a>
+                                    <a class="btn btn-sm btn-primary stretched-link" href="{{ event.link }}">
+                                        Read Details
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-md-5 d-flex align-items-center justify-content-center">
@@ -32,6 +43,7 @@ layout: layout.html
                     </div>
                 </div>
                 {% endfor %}
+
             </div>
         </section>
 
