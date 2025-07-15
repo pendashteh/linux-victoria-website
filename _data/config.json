@@ -14,17 +14,17 @@
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "https://secure.meetupstatic.com/photos/event/c/4/4/1/highres_528890241.webp?w=384",
       "alt": "Town Hall"
-    }, 
+    },
     {
-      "title": "LAIT Night chats",
-      "date": "Linux & AI Tuesday Night Discussions",
-      "time": "21:00 PM to 22:00 PM AEST",
+      "title": "LAIT Night Chats",
+      "weekday": 2,
+      "time": "9:00 PM – 10:00 PM AEST",
       "location": "Electron Workshop eVenue",
       "link": "/posts/lait-night-chat-linux-and-ai",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "/assets/images/LAIT_night_banner.png",
       "alt": "Linux and AI Tuesday Night Chat"
-    }, 
+    },
     {
       "title": "Linux Regional Summit",
       "date": "Monday, August 25, 2025",
@@ -34,7 +34,7 @@
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "/assets/images/Linux_Regional_Summit_2025.png",
       "alt": "Linux Regional Summit 2025"
-    },    
+    },
     {
       "title": "Install Fest",
       "date": "Date to be announced",

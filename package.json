@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "eleventy-plugin-redirects": "^1.0.0",
+    "luxon": "^3.7.1",
     "markdown-it-wikilinks": "^1.4.0"
   }
 }
