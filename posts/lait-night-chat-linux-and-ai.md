@@ -13,15 +13,15 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 ## 🗓️ Next Event
 
-**LAIT Night Chat No. 2**
+**LAIT Night Chat No. 3**
 
-**Date:** Tuesday, July 15, 2025
+**Date:** Tuesday, July 22, 2025
 
 **Time:** 9:00 PM (AEST)
 
 **Location:** Online at [Electron Workshop eVenue](https://electronworkshop.com.au/goto/venue/)
 
-**RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/309478937/?ref=linuxvictoria.org)
+**RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/309564131/)
 
 
 ## What Are LAIT Night Chats?
