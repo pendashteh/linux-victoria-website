@@ -1,10 +1,12 @@
-name: Notify Telegram on PR and Issue Events
+name: Notify Telegram on PR, Issue, and Comment Events
 
 on:
   pull_request:
     types: [opened, closed]
   issues:
     types: [opened, closed]
+  issue_comment:
+    types: [created]
 
 jobs:
   notify:
@@ -23,6 +25,9 @@ jobs:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_URL: ${{ github.event.comment.html_url }}
         run: |
           echo "🔍 GitHub Event: $EVENT_NAME"
           echo "🔍 Action: $ACTION"
@@ -54,6 +59,15 @@ jobs:
               echo "⚠️ Unsupported issue action: $ACTION"
               exit 0
             fi
+
+          elif [ "$EVENT_NAME" = "issue_comment" ]; then
+            echo "💬 Handling an issue comment"
+            echo "Comment Author: $COMMENT_AUTHOR"
+            echo "Comment URL: $COMMENT_URL"
+            echo "Comment Body: $COMMENT_BODY"
+
+            SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 200)
+            TEXT="💬 *New Comment* by $COMMENT_AUTHOR on an issue:%0A${SHORT_BODY}%0ALink: $COMMENT_URL"
 
           else
             echo "⚠️ Unsupported event: $EVENT_NAME"
