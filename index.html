@@ -4,16 +4,16 @@ layout: layout.html
 ---
 
 <section class="bg-body mt-5">
-    <div class="container">
+    <div class="container-fluid px-0">
 
         <!-- Upcoming Events -->
-        <section>
+        <section class="container">
             <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Linux Victoria Upcoming Events</h3>
 
             <div class="row row-gap-3">
                 {% for event in config.eventCards %}
                 <div class="col-12 col-lg-6 pb-4">
-                    <div class="card bg-body-tertiary rounded-3 shadow-sm text-primary border-0 h-100">
+                    <div class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 h-100">
                         <div class="row g-0 flex-column flex-md-row h-100">
                             <div class="col-md-7">
                                 <div class="card-body">
@@ -36,7 +36,7 @@ layout: layout.html
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-5 d-flex align-items-center justify-content-center">
+                            <div class="col-md-5 d-flex align-items-center justify-content-center pe-0 pe-md-2">
                                 <img src="{{ event.image }}" class="img-fluid rounded" alt="{{ event.alt }}">
                             </div>
                         </div>
@@ -47,66 +47,87 @@ layout: layout.html
             </div>
         </section>
 
+        <!-- Transition Divider Top -->
+        <div class="section-divider section-divider-top">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-100" style="display: block;">
+                <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#753f98"></path>
+            </svg>
+        </div>
+
         <!-- Ways to Engage -->
-        <section class="py-5">
-            <div class="mx-3">
-                <h3 class="text-primary fw-semibold mb-4 text-uppercase text-center">Ways to Engage </h3>
-                <br>
-                <!-- Newsletter -->
-                <div class="row">
-                    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 pb-0">
-                        <h2 class="mb-0 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
-                        <script type="text/javascript" src="//mautic.linuxvictoria.org/form/generate.js?id=1"></script>
-                    </div>
-                </div>
+        <div class="bg-primary">
+            <section class="py-5 container">
+                <div class="mx-3">
+                    <h3 class="text-light fw-semibold mb-4 text-uppercase text-center">Ways to Engage </h3>
+                    <br>
 
-                <br>
+                    <!-- Newsletter -->
+                    <div class="d-grid gap-5 mb-5">
 
-                <!-- Volunteer Call -->
-                <div class="row">
-                    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4">
-                        <h3 class="text-primary fw-semibold">Get Involved!</h3>
-                        <h4 class="text-primary fw-semibold fs-5">Linux Victoria is currently looking for volunteers.
-                        </h4>
-                        <p>
-                            If you are interested in helping out, please fill in our
-                            <a href="/volunteer-form">Volunteer Form</a>
-                        </p>
-                        <div>
-                            <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
+                        <div class="row">
+                            <div
+                                class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 pb-0 shadow">
+                                <h2 class="mb-0 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
+                                <script type="text/javascript"
+                                    src="//mautic.linuxvictoria.org/form/generate.js?id=1"></script>
+                            </div>
                         </div>
+
+                        <!-- Volunteer Call -->
+                        <div class="row">
+                            <div
+                                class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 shadow">
+                                <h3 class="text-primary fw-semibold">Get Involved!</h3>
+                                <h4 class="text-primary fw-semibold fs-5">Linux Victoria is currently looking for
+                                    volunteers.
+                                </h4>
+                                <p>
+                                    If you are interested in helping out, please fill in our
+                                    <a href="/volunteer-form">Volunteer Form</a>
+                                </p>
+                                <div>
+                                    <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Join LUV / Mailing List -->
+                        <div class="row">
+                            <div
+                                class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 shadow">
+                                <h3 class="text-primary fw-semibold">Chat in LUV's Mailing Lists</h3>
+                                <a href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/">Subscribe
+                                    to
+                                    LUV's
+                                    announce mailing list.</a>
+                                <p class="mb-0">We'll send you a confirmation email in reply.</p>
+                                <p class="mb-0">Come back, enter the confirmation password, and you're done!</p>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
+            </section>
+        </div>
 
-                <br>
 
-                <!-- Join LUV / Mailing List -->
-                <div class="row">
-                    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4">
-                        <h3 class="text-primary fw-semibold">Chat in LUV's Mailing Lists</h3>
-                        <a href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/">Subscribe
-                            to
-                            LUV's
-                            announce mailing list.</a>
-                        <p class="mb-0">We'll send you a confirmation email in reply.</p>
-                        <p class="mb-0">Come back, enter the confirmation password, and you're done!</p>
-                    </div>
-                </div>
 
-                <div class="mb-5 text-center text-lg-start">
-                </div>
-
-            </div>
-        </section>
+        <!-- Transition Divider Top -->
+        <div class="section-divider section-divider-bottom">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-100" style="display: block;">
+                <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#753f98"></path>
+            </svg>
+        </div>
 
 
         <!-- Useful Links -->
-        <div class="mb-5">
+        <div class="mb-5 container">
             <h3 class="text-primary fw-semibold mb-4 text-center text-lg-start">Useful Links</h3>
             <div class="row row-gap-2">
                 {% for link in config.usefulLinks %}
-                <a href="{{ link.link }}" target="_blank" class="col-12 text-decoration-none">
-                    <h4 class="text-dark border-start border-primary border-5 ps-2">{{ link.title }}</h4>
+                <a href="{{ link.link }}" target="_blank" class="hover-primary col-12 text-decoration-none h4 text-dark border-start border-primary border-5 ms-2 mb-0">
+                    {{ link.title }}
                 </a>
                 {% endfor %}
             </div>
