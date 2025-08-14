@@ -1,5 +1,6 @@
 ---
 layout: "/posts_embed_layout"
+preview_image: "/assets/images/Linux_Regional_Summit_2025_1x1.png"
 ---
 
 <div class="d-md-none d-block">
