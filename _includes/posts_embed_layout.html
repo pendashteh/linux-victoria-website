@@ -1,0 +1,26 @@
+{% include '_head.html' %}
+    
+{% include '_navbar.html' %}
+
+
+<main>
+
+        <style>
+            h1 { margin-top: 3rem; }
+            h2 { margin-top: 2.5rem; }
+            h3 { margin-top: 0.8rem; }
+        </style>
+        <section class="bg-body mt-5">
+            <div class="container">
+                <div class="">
+                    {{ content }}
+                </div>
+            </div>
+        </section>
+        <div class="container text-center mt-5">
+            <a href="/index" >Back to Home</a>
+        </div>
+    
+</main>
+
+{% include '_footer.html' %}
