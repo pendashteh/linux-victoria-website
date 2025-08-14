@@ -1,6 +1,6 @@
 ## Linux Victoria - Town Hall Meeting August
 
-Tuesday, August 5th, 2025 
+Tuesday, August 12th, 2025 
 7:00 PM to 9:00 PM AEST
 
 ## Details
@@ -15,7 +15,12 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 
 ## Key Discussion Points
 
-- TBC
+- Linux and AI Event Collaboration with MLAI Melbourne
+- Linux Regional Summit in Gippsland
+- Linux Birthday Celebrations
+- Software Freedom Day Community Partnership
+- Installfests planning in Ballarat
+- Internet Governance Forum community reach
 
 ## How To Join
 
