@@ -6,14 +6,24 @@
   },
   "eventCards": [
     {
-      "title": "Linux Victoria - Town Hall Meeting - August",
-      "date": "Tuesday, August 12, 2025",
-      "time": "7:00 PM to 9:00 PM AEST",
-      "location": "Online",
-      "link": "/posts/2025-08-05_Town-Hall-Meeting-August",
+      "title": "Linux & AI -- Collaboration with MLAI Melbourne",
+      "date": "Tuesday, August 19, 2025",
+      "time": "6:00 PM to 8:00 PM AEST",
+      "location": "912 Collins St, Docklands, VIC (Hybrid)",
+      "link": "/posts/2025-08-19_MLAI-Linux-and-AI",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
-      "image": "https://secure.meetupstatic.com/photos/event/c/4/4/1/highres_528890241.webp?w=384",
-      "alt": "Town Hall"
+      "image": "https://secure.meetupstatic.com/photos/event/b/b/7/0/event_529367984.webp",
+      "alt": "MLAI and Linux Victoria"
+    },
+    {
+      "title": "Linux Regional Summit",
+      "date": "Sunday 24th to Monday 25th August 2025",
+      "time": "10:00 AM to 5:00 PM AEST",
+      "location": "Morwell Innovation Centre, Victoria (Hybrid Event)",
+      "link": "/linux-regional-summit",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/Linux_Regional_Summit_2025_thumbnail.webp",
+      "alt": "Linux Regional Summit 2025"
     },
     {
       "title": "LAIT Night Chats",
@@ -26,23 +36,14 @@
       "alt": "Linux and AI Tuesday Night Chat"
     },
     {
-      "title": "Linux Regional Summit",
-      "date": "Monday, August 25, 2025",
-      "time": "10:00 AM to 5:00 PM AEST",
-      "location": "Morwell Innovation Centre, Victoria (Hybrid Event)",
-      "link": "/linux-regional-summit",
+      "title": "Linux Victoria - Town Hall Meeting - September",
+      "date": "Tuesday, August 12, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-09-02_Town-Hall-Meeting-September",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
-      "image": "/assets/images/Linux_Regional_Summit_2025.png",
-      "alt": "Linux Regional Summit 2025"
-    },
-    {
-      "title": "Install Fest",
-      "date": "Date to be announced",
-      "time": "",
-      "location": "Victoria, Australia",
-      "link": "/posts/installfests",
-      "image": "/assets/InstallFest_V3.png",
-      "alt": "Install Fest"
+      "image": "/assets/images/Town-Hall-Meeting-September2025_tumbnail.webp",
+      "alt": "Town Hall"
     }
   ],
   "navbarOptions": [
