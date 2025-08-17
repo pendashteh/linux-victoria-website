@@ -6,46 +6,174 @@ layout: layout.html
 <section class="bg-body mt-5">
     <div class="container-fluid px-0">
 
+        <!-- Filter upcoming events -->
+        {% assign upcomingCards = "" | split: "" %}
+        {% assign currentTimestamp = "now" | date: "%s" %}
+        
+        {% for card in config.homeCards %}
+            {% unless card.past == true %}
+                {% if card.date == nil or card.date contains "Date to be announced" or card.date contains "Tuesday Night Discussions" %}
+                    {% assign upcomingCards = upcomingCards | push: card %}
+                {% else %}
+                    {% assign cardTimestamp = card.date | date: "%s" %}
+                    {% if cardTimestamp > currentTimestamp %}
+                        {% assign upcomingCards = upcomingCards | push: card %}
+                    {% endif %}
+                {% endif %}
+            {% endunless %}
+        {% endfor %}
+
+        <!-- Only show upcoming events section if there are upcoming events -->
+        {% if upcomingCards.size > 0 %}
         <!-- Upcoming Events -->
         <section class="container">
-            <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Linux Victoria Upcoming Events</h3>
+            <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Welcome to Linux Victoria</h3>
 
             <div class="row row-gap-3">
-                {% for event in config.eventCards %}
+                {% for card in upcomingCards %}
                 <div class="col-12 col-lg-6 pb-4">
-                    <div class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 h-100">
-                        <div class="row g-0 flex-column flex-md-row h-100">
+                    <article class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 overflow-hidden">
+                        <div class="row g-0 flex-column flex-md-row">
                             <div class="col-md-7">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ event.title }}</h5>
-                                    {% if event.weekday %}
-                                    <p class="card-text mb-0">
-                                        {{ "now" | nextWeekday: event.weekday | date: "%A, %B %e, %Y" }}
-                                    </p>
-                                    {% elsif event.date contains "Date to be announced" %}
-                                    <p class="card-text mb-0">Date to be announced</p>
-                                    {% elsif event.date %}
-                                    <p class="card-text mb-0">{{ event.date }}</p>
-                                    {% endif %}
-                                    {% if event.time %}
-                                    <p class="card-text mb-0">{{ event.time }}</p>
-                                    {% endif %}
-                                    <p class="card-text">Location: {{ event.location }}</p>
-                                    <a class="btn btn-sm btn-primary stretched-link" href="{{ event.link }}">
-                                        Read Details
-                                    </a>
+                                <div class="card-body d-flex flex-column">
+                                    <!-- Title -->
+                                    <h5 class="card-title text-dark mb-3 lh-base">{{ card.title }}</h5>
+                                    
+                                    <!-- Meta Information -->
+                                    <div class="text-muted small">
+                                        {% if card.weekday %}
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span>{{ "now" | nextWeekday: card.weekday | date: "%A, %B %e, %Y" }}</span>
+                                        </div>
+                                        {% elsif card.date contains "Date to be announced" %}
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span>Date to be announced</span>
+                                        </div>
+                                        {% elsif card.date %}
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span>{{ card.date }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if card.time %}
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span>{{ card.time }}</span>
+                                        </div>
+                                        {% endif %}
+                                        <div class="d-flex align-items-center">
+                                            <span>{{ card.location }}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Spacer to push button to bottom -->
+                                    <div class="flex-grow-1"></div>
+                                    
+                                    <!-- Action Button -->
+                                    <div class="mt-3">
+                                        <a class="btn btn-primary btn-sm" href="{{ card.link }}">
+                                            Read Details
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-5 d-flex align-items-center justify-content-center pe-0 pe-md-2">
-                                <img src="{{ event.image }}" class="img-fluid rounded" alt="{{ event.alt }}">
+                            <div class="col-md-5 d-flex align-items-center justify-content-center p-2">
+                                <img src="{{ card.image }}" class="img-fluid rounded" alt="{{ card.alt }}">
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
                 {% endfor %}
-
             </div>
         </section>
+
+        <br>
+        <br>
+        {% endif %}
+
+        <!-- Filter past events -->
+        {% assign pastCards = "" | split: "" %}
+        
+        {% for card in config.homeCards %}
+            {% if card.past == true %}
+                {% assign pastCards = pastCards | push: card %}
+            {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday Night Discussions" %}
+                {% assign cardTimestamp = card.date | date: "%s" %}
+                {% if cardTimestamp <= currentTimestamp %}
+                    {% assign pastCards = pastCards | push: card %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        <!-- Only show previous events section if there are past events -->
+        {% if pastCards.size > 0 %}
+        <!-- Previous Events and Posts - Blog Style -->
+        <section class="container">
+            <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Previous Events and Posts</h3>
+
+            <div class="row row-gap-4">
+                {% for card in pastCards %}
+                <div class="col-12 col-md-6 col-xl-4 pb-3">
+                    <article class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 h-100 overflow-hidden">
+                        <!-- Featured Image -->
+                        <div class="card-img-top overflow-hidden" style="height: 200px;">
+                            <img src="{{ card.image }}" 
+                                 class="img-fluid w-100 h-100 object-fit-cover" 
+                                 alt="{{ card.alt }}"
+                                 style="transition: transform 0.3s ease;">
+                        </div>
+                        
+                        <!-- Card Body -->
+                        <div class="card-body d-flex flex-column">
+                            <!-- Date Badge -->
+                            <div class="mb-2">
+                                {% if card.weekday %}
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 small">
+                                    {{ "now" | nextWeekday: card.weekday | date: "%b %e, %Y" }}
+                                </span>
+                                {% elsif card.date contains "Date to be announced" %}
+                                <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill px-3 py-2 small">
+                                    TBA
+                                </span>
+                                {% elsif card.date %}
+                                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 small">
+                                    {{ card.date }}
+                                </span>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- Title -->
+                            <h5 class="card-title text-dark mb-3 lh-base">{{ card.title }}</h5>
+                            
+                            <!-- Meta Information -->
+                            <div class="text-muted small mb-3">
+                                {% if card.time %}
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="bi bi-clock me-2"></i>
+                                    <span>{{ card.time }}</span>
+                                </div>
+                                {% endif %}
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt me-2"></i>
+                                    <span>{{ card.location }}</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Spacer to push button to bottom -->
+                            <div class="flex-grow-1"></div>
+                            
+                            <!-- Action Button -->
+                            <div class="mt-3">
+                                <a class="btn btn-outline-primary btn-sm w-100" href="{{ card.link }}">
+                                    <i class="bi bi-arrow-right me-2"></i>
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
 
         <!-- Transition Divider Top -->
         <div class="section-divider section-divider-top">

@@ -4,7 +4,7 @@
     "subtitle": "Supporting Linux in Victoria since 1993",
     "description": "Linux Victoria is your ultimate resource for Linux events, and community support in the Victoria region. Learn about Linux distributions, open-source software, and best practices. Join our local Linux community to stay updated and enhance your skills with expert resources and networking opportunities."
   },
-  "eventCards": [
+  "homeCards": [
     {
       "title": "Linux & AI -- Collaboration with MLAI Melbourne",
       "date": "Tuesday, August 19, 2025",
@@ -13,7 +13,8 @@
       "link": "/posts/2025-08-19_MLAI-Linux-and-AI",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "https://secure.meetupstatic.com/photos/event/b/b/7/0/event_529367984.webp",
-      "alt": "MLAI and Linux Victoria"
+      "alt": "MLAI and Linux Victoria",
+      "past": false
     },
     {
       "title": "Linux Regional Summit",
@@ -23,7 +24,8 @@
       "link": "/linux-regional-summit",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "/assets/images/Linux_Regional_Summit_2025_thumbnail.webp",
-      "alt": "Linux Regional Summit 2025"
+      "alt": "Linux Regional Summit 2025",
+      "past": false
     },
     {
       "title": "LAIT Night Chats",
@@ -33,16 +35,72 @@
       "link": "/posts/lait-night-chat-linux-and-ai",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "/assets/images/LAIT_night_banner.png",
-      "alt": "Linux and AI Tuesday Night Chat"
+      "alt": "Linux and AI Tuesday Night Chat",
+      "past": false
     },
     {
       "title": "Linux Victoria - Town Hall Meeting - September",
-      "date": "Tuesday, August 12, 2025",
+      "date": "Tuesday, September 2, 2025",
       "time": "7:00 PM to 9:00 PM AEST",
       "location": "Online",
       "link": "/posts/2025-09-02_Town-Hall-Meeting-September",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
-      "image": "/assets/images/Town-Hall-Meeting-September2025_tumbnail.webp",
+      "image": "/assets/images/Town-Hall-Meeting-September2025_thumbnail.webp",
+      "alt": "Town Hall",
+      "past": ""
+    },
+    {
+      "title": "Linux Victoria - Town Hall Meeting - August",
+      "date": "Tuesday, August 12, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-08-12_Town-Hall-August",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/Town-Hall-Meeting-August2025_thumbnail.webp",
+      "alt": "Town Hall",
+      "past": ""
+    },
+    {
+      "title": "Informal Linux Users Catchup Southeast Melbourne",
+      "date": "Tuesday, July 20, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-07-01_Town-Hall-July",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/photo_2025-07-20_16-02-35.jpg",
+      "alt": "Town Hall",
+      "past": ""
+    },
+    {
+      "title": "Linux Victoria - Town Hall Meeting - July",
+      "date": "Tuesday, July 1, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-07-01_Town-Hall-July",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/Town-Hall-Meeting-July2025_thumbnail.webp",
+      "alt": "Town Hall",
+      "past": ""
+    },
+    {
+      "title": "Linux Victoria - Town Hall Meeting - June",
+      "date": "Tuesday, June 3, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-06-03_Town-Hall-June",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/Town-Hall-Meeting-June2025_thumbnail.webp",
+      "alt": "Town Hall",
+      "past": ""
+    },
+    {
+      "title": "Linux Victoria - Town Hall Meeting - May",
+      "date": "Tuesday, May 6, 2025",
+      "time": "7:00 PM to 9:00 PM AEST",
+      "location": "Online",
+      "link": "/posts/2025-08-12_Town-Hall-August",
+      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
+      "image": "/assets/images/Town-Hall-Meeting-May2025_thumbnail.webp",
       "alt": "Town Hall"
     }
   ],
