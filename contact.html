@@ -48,3 +48,28 @@ layout: layout.html
     })()
 
 </script>
+
+<script>
+  // --- Prefill Contact form fields from URL params ---
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+
+    function setFieldFromParams(selector, keys) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      for (const k of keys) {
+        const v = params.get(k);
+        if (v !== null && v !== undefined && v !== "") {
+          el.value = v;
+          return;
+        }
+      }
+    }
+
+    // Map params -> fields
+    // Note: your Name input's HTML name attr is "Name" (capital N).
+    setFieldFromParams('#contactName',   ['name', 'fullName', 'n', 'Name']);
+    setFieldFromParams('#contactEmail',  ['email', 'e']);
+    setFieldFromParams('#contactMessage', ['message', 'msg', 'comment', 'notes']);
+  })();
+</script>
