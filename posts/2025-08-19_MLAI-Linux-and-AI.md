@@ -1,20 +1,28 @@
-## Linux & AI -- Linux Victoria in collaboration with MLAI Melbourne
+# Linux & AI -- Linux Victoria in collaboration with MLAI Melbourne
 
-Tuesday, August 19th, 2025 
+Tuesday, August 19th, 2025  
 7:00 PM to 9:00 PM AEST
 
 ## Details
 
-DeepSeek shook up NVIDIA's shares and hinted at many of us that you could get a lot from running an LLM locally. And that's for those who haven't yet come around trying `llama` from Meta.
+DeepSeek rattled NVIDIA's stock and reminded many of us just how much you can gain from running an LLM locally—especially for those who still hadn't tried Meta's `llama`.
 
-At this event, Linux Victoria presents their finding of exploring the intersection between Linux & AI, which is mainly about open-weight models and running them locally.
+After hosting a couple of mentoring sessions for those passionate about running AI locally, **Linux Victoria** launched the ***Linux & AI Tuesday Night Chats*** (LAIT Night Chats) in July. What began as an informal initiative has since become a weekly gathering for exploring, discussing, and experimenting at the intersection of Linux and AI.
+
+At this event, **Alexar Pendashteh** on behalf of Linux Victoria, presents their finding of exploring the intersection between Linux & AI, which is mainly about open-weight models and running them locally.
+
+Alexar is a technologist and social entrepreneur who's passionate about enabling local economies and resilient communities by leveraging digital freedoms and technology Commons.
 
 The schedule for the day is developing and will be updated on this page.
-Her'es a rough schedule:
 
-Meanwhile, make sure you check out Linux Victoria's weekly "LAIT Night Chats" on Linux & AI discussions: https://linuxvictoria.org/posts/lait-night-chat-linux-and-ai/
+6:00 - 6:20 Meet & Greet / Socialising  
+6:20 - 6:30 Announcements and AI news  
+6:30 - 7:40 Discussion  
+8:00 Heading to the pub
 
+Meanwhile, if you haven't tried local AI, we encourage you to download **Jan AI** from https://jan.ai/ and get one of the relatively light models such as Llama3 from the Hub.
 
+Make sure you check out Linux Victoria's weekly "LAIT Night Chats" on Linux & AI discussions: https://linuxvictoria.org/posts/lait-night-chat-linux-and-ai/
 
 ## Key Discussion Points
 
@@ -27,7 +35,7 @@ Meanwhile, make sure you check out Linux Victoria's weekly "LAIT Night Chats" on
 
 ## How To Join
 
-In Preson:  
+In Person:  
 [912 Collins St, Docklands, VIC](https://maps.app.goo.gl/zmdULZVaBJHxA9gc7)
 
 Online:  
