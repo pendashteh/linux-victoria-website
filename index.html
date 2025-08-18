@@ -13,11 +13,21 @@ layout: layout.html
             <div class="row row-gap-3">
                 {% for event in config.eventCards %}
                 <div class="col-12 col-lg-6 pb-4">
-                    <div class="card bg-body-tertiary rounded-3 shadow-sm text-primary border-0 h-100">
+                    <div class="card rounded-3 text-primary h-100
+      {% if event.title and event.title contains 'Regional Summit' %}
+        border border-3 border-primary shadow-lg position-relative
+      {% else %}
+        bg-body-tertiary shadow-sm border-0
+      {% endif %}">
+
                         <div class="row g-0 flex-column flex-md-row h-100">
                             <div class="col-md-7">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ event.title }}</h5>
+                                    <h5
+                                        class="card-title {% if event.title and event.title contains 'Regional Summit' %}fw-bold text-uppercase{% endif %}">
+                                        {{ event.title }}
+                                    </h5>
+
                                     {% if event.weekday %}
                                     <p class="card-text mb-0">
                                         {{ "now" | nextWeekday: event.weekday | date: "%A, %B %e, %Y" }}
@@ -27,24 +37,31 @@ layout: layout.html
                                     {% elsif event.date %}
                                     <p class="card-text mb-0">{{ event.date }}</p>
                                     {% endif %}
+
                                     {% if event.time %}
                                     <p class="card-text mb-0">{{ event.time }}</p>
                                     {% endif %}
+
                                     <p class="card-text">Location: {{ event.location }}</p>
-                                    <a class="btn btn-sm btn-primary stretched-link" href="{{ event.link }}">
+
+                                    <a class="btn btn-primary stretched-link" href="{{ event.link }}">
                                         Read Details
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-5 d-flex align-items-center justify-content-center">
-                                <img src="{{ event.image }}" class="img-fluid rounded" alt="{{ event.alt }}">
+
+                            <div
+                                class="col-md-5 d-flex align-items-center justify-content-center {% if event.title and event.title contains 'Regional Summit' %}p-2{% endif %}">
+                                <img src="{{ event.image }}"
+                                    class="img-fluid rounded {% if event.title and event.title contains 'Regional Summit' %}shadow{% endif %}"
+                                    alt="{{ event.alt }}">
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-
             </div>
+
         </section>
 
         <!-- Ways to Engage -->
