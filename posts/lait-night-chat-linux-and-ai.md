@@ -3,8 +3,9 @@ title: "Introducing LAIT Night Chats: Linux and AI Tuesday Conversations"
 date: 2025-07-08
 tags: ["linux", "ai", "community", "meetup"]
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
-preview_image: "/assets/images/LAIT_night_banner.png"
+preview_image: "http://linuxvictoria.org/assets/images/LAIT_night_banner.png"
 ---
+<img src="/assets/images/LAIT_night_banner.png" alt="LAIT Night Chats (Linux and AI Tuesday)" style="width: 100%;" class="rounded mt-3" />
 
 # LAIT Night Chats: Linux & AI Tuesday Conversations! 
 
@@ -13,11 +14,11 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 ## 🗓️ Next Event
 
-**LAIT Night Chat No. 5**
+**LAIT Night Chat No. 7**
 
 **Date:** Tuesday, July 19, 2025
 
-**Time:** 9:00 PM (AEST)
+**Time:** 7:00 PM (AEST)
 
 **Location:** Online at [Electron Workshop eVenue](https://electronworkshop.com.au/goto/venue/)
 
