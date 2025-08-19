@@ -46,7 +46,7 @@ In Person:
 [912 Collins St, Docklands, VIC](https://maps.app.goo.gl/zmdULZVaBJHxA9gc7)
 
 Online:  
-[https://venue.electronworkshop.com.au/r/linux-victoria](https://venue.electronworkshop.com.au/r/linux-victoria)  
+[https://electronworkshop.com.au/goto/mlai](https://electronworkshop.com.au/goto/mlai)  
 We use a self-hosted BBB instance for this meeting.
 
 ## Date
