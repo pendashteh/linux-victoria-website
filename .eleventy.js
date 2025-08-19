@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("_redirects");
 
   eleventyConfig.addFilter("nextWeekday", function(input, targetWeekday = 2) {
     let baseDate = input === "now"
