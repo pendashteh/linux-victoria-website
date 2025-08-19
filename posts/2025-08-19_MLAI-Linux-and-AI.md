@@ -1,3 +1,10 @@
+---
+preview_image: "http://linuxvictoria.org/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png"
+---
+
+<img src="/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png" alt="MLAI and Linux Victoria" style="width: 100%;" class="rounded mt-3 d-block d-md-none" />
+<img src="/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png" alt="MLAI and Linux Victoria" style="width: 50%;" class="rounded mt-3 d-none d-md-block" />
+
 # Linux & AI -- Linux Victoria in collaboration with MLAI Melbourne
 
 Tuesday, August 19th, 2025  
