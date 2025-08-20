@@ -5,909 +5,613 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linux Regional Summit 2025</title>
-
-
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/style.css" rel="stylesheet">
   <meta property="og:image" content="https://linuxvictoria.org/assets/images/Linux_Regional_Summit_2025_thumbnail.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image"
     content="https://linuxvictoria.org/assets/images/Linux_Regional_Summit_2025_thumbnail.webp">
   <style>
-    :root {
-      --bg-color: #f8f6f3;
-      --text-color: #2c3e50;
-      --card-bg: rgba(255, 255, 255, 0.85);
-      --card-border: rgba(139, 92, 246, 0.3);
-      --highlight: #7c3aed;
-      --accent: #059669;
-      --cta-bg: linear-gradient(135deg, #7c3aed, #059669);
-      --disabled-cta-bg: linear-gradient(135deg, #e879f9, #34d399);
-      --shadow-color: rgba(0, 0, 0, 0.15);
-      --leaf-color: #10b981;
-      --cloud-color: #e0e7ff;
-      --particle-color: #a78bfa;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg,
-          #fef7ff 0%,
-          #f3e8ff 15%,
-          #e0e7ff 30%,
-          #ddd6fe 50%,
-          #c7d2fe 70%,
-          #bfdbfe 85%,
-          #a5f3fc 100%);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Enhanced animated background elements */
-    .bg-elements {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    /* Floating leaves with enhanced animation */
-    .leaf {
-      position: absolute;
-      width: 20px;
-      height: 30px;
-      background: linear-gradient(45deg, #10b981, #34d399, #6ee7b7);
-      border-radius: 0 100% 0 100%;
-      opacity: 0.4;
-      animation: float-leaf 18s ease-in-out infinite;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-
-    .leaf-1 {
-      top: 10%;
-      left: 5%;
-      animation-delay: 0s;
-      transform: rotate(45deg);
-    }
-
-    .leaf-2 {
-      top: 20%;
-      right: 10%;
-      animation-delay: 3s;
-      transform: rotate(-30deg);
-    }
-
-    .leaf-3 {
-      bottom: 30%;
-      left: 15%;
-      animation-delay: 6s;
-      transform: rotate(60deg);
-    }
-
-    .leaf-4 {
-      top: 60%;
-      right: 20%;
-      animation-delay: 9s;
-      transform: rotate(-60deg);
-    }
-
-    .leaf-5 {
-      bottom: 10%;
-      left: 60%;
-      animation-delay: 12s;
-      transform: rotate(20deg);
-    }
-
-    .leaf-6 {
-      top: 40%;
-      left: 80%;
-      animation-delay: 15s;
-      transform: rotate(-45deg);
-    }
-
-    /* Enhanced soft clouds */
-    .cloud {
-      position: absolute;
-      background: linear-gradient(135deg, #e0e7ff, #f0f9ff);
-      border-radius: 50px;
-      opacity: 0.5;
-      animation: drift 25s ease-in-out infinite;
-      filter: blur(1px);
-    }
-
-    .cloud-1 {
-      width: 100px;
-      height: 50px;
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .cloud-2 {
-      width: 140px;
-      height: 70px;
-      top: 25%;
-      right: 15%;
-      animation-delay: 8s;
-    }
-
-    .cloud-3 {
-      width: 120px;
-      height: 60px;
-      bottom: 40%;
-      left: 20%;
-      animation-delay: 16s;
-    }
-
-    /* Enhanced particles */
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: radial-gradient(circle, var(--particle-color), #c4b5fd);
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: twinkle 5s ease-in-out infinite;
-    }
-
-    .particle-1 {
-      top: 20%;
-      left: 30%;
-      animation-delay: 0s;
-    }
-
-    .particle-2 {
-      top: 40%;
-      right: 25%;
-      animation-delay: 1.2s;
-    }
-
-    .particle-3 {
-      bottom: 50%;
-      left: 70%;
-      animation-delay: 2.4s;
-    }
-
-    .particle-4 {
-      top: 70%;
-      right: 40%;
-      animation-delay: 3.6s;
-    }
-
-    .particle-5 {
-      top: 30%;
-      left: 80%;
-      animation-delay: 4.8s;
-    }
-
-    /* Enhanced penguin silhouettes */
-    .penguin {
-      position: absolute;
-      width: 30px;
-      height: 40px;
-      background: linear-gradient(to bottom, #4f46e5, #6366f1, #8b5cf6);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      opacity: 0.3;
-      animation: gentle-waddle 10s ease-in-out infinite;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-
-    .penguin-1 {
-      bottom: 15%;
-      left: 20%;
-      animation-delay: 1s;
-    }
-
-    .penguin-2 {
-      bottom: 18%;
-      right: 30%;
-      animation-delay: 5s;
-    }
-
-    /* Enhanced koala */
-    .koala {
-      position: absolute;
-      width: 35px;
-      height: 40px;
-      background: linear-gradient(to bottom, #6b7280, #9ca3af, #d1d5db);
-      border-radius: 50% 50% 40% 40%;
-      opacity: 0.2;
-      top: 25%;
-      right: 5%;
-      animation: koala-sway 12s ease-in-out infinite;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-
-    .koala::before,
-    .koala::after {
-      content: '';
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background: inherit;
-      border-radius: 50%;
-      top: -7px;
-    }
-
-    .koala::before {
-      left: -4px;
-    }
-
-    .koala::after {
-      right: -4px;
-    }
-
-    @keyframes float-leaf {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0deg) scale(1);
-      }
-
-      25% {
-        transform: translateY(-30px) rotate(90deg) scale(1.15);
-      }
-
-      50% {
-        transform: translateY(-15px) rotate(180deg) scale(0.85);
-      }
-
-      75% {
-        transform: translateY(-40px) rotate(270deg) scale(1.1);
-      }
-    }
-
-    @keyframes drift {
-
-      0%,
-      100% {
-        transform: translateX(0) translateY(0);
-      }
-
-      33% {
-        transform: translateX(40px) translateY(-15px);
-      }
-
-      66% {
-        transform: translateX(-30px) translateY(-8px);
-      }
-    }
-
-    @keyframes twinkle {
-
-      0%,
-      100% {
-        opacity: 0.3;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.8);
-      }
-    }
-
-    @keyframes gentle-waddle {
-
-      0%,
-      100% {
-        transform: translateX(0) rotate(0deg);
-      }
-
-      25% {
-        transform: translateX(8px) rotate(3deg);
-      }
-
-      50% {
-        transform: translateX(0) rotate(0deg);
-      }
-
-      75% {
-        transform: translateX(-8px) rotate(-3deg);
-      }
-    }
-
-    @keyframes koala-sway {
-
-      0%,
-      100% {
-        transform: rotate(0deg) scale(1);
-      }
-
-      50% {
-        transform: rotate(4deg) scale(1.08);
-      }
-    }
-
-    .poster {
-      position: relative;
-      max-width: 1000px;
-      width: 100%;
-      background: var(--card-bg);
-      border: 3px solid var(--card-border);
-      border-radius: 30px;
-      padding: 3rem;
-      box-shadow: 0 25px 50px var(--shadow-color), 0 0 0 1px rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      overflow: hidden;
-      animation: slideIn 1s ease-out;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(40px) scale(0.95);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      animation: fadeInUp 1.2s ease-out;
-    }
-
-    .event-title {
-      font-size: 4rem;
-      font-weight: 900;
-      background: var(--cta-bg);
+    .gradient-text {
+      background: linear-gradient(135deg, #000080, #99ce65);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-      letter-spacing: -1px;
-    }
-
-    .sub-title {
-      font-size: 1.8rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
     }
 
     .birthday-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--highlight), #a855f7);
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: 600;
-      margin-top: 0.5rem;
       animation: pulse 2s ease-in-out infinite;
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: scale(1);
-        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
       }
-
       50% {
         transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
       }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .event-details,
-    .schedule-section {
-      background: var(--card-bg);
-      border: 2px solid var(--card-border);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 15px 30px var(--shadow-color);
-      animation: fadeInUp 1.4s ease-out;
-    }
-
-    .schedule-section h3 {
-      color: var(--highlight);
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .schedule-day {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: rgba(124, 58, 237, 0.05);
-      border-radius: 12px;
-      border-left: 4px solid var(--highlight);
-    }
-
-    .schedule-day h4 {
-      color: var(--highlight);
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-    }
-
-    .schedule-item {
-      padding: 0.4rem 0.8rem;
-      margin: 0.3rem 0;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 8px;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      border-left: 3px solid var(--accent);
-    }
-
-    .schedule-item:hover {
-      transform: translateX(5px);
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .detail-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1.5rem;
-      padding: 1.2rem;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      border-left: 4px solid var(--highlight);
-    }
-
-    .detail-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px var(--shadow-color);
-      background: rgba(255, 255, 255, 0.8);
-    }
-
-    .detail-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .icon {
-      width: 36px;
-      height: 36px;
-      margin-right: 1rem;
-      color: var(--highlight);
-      flex-shrink: 0;
-    }
-
-    .detail-content h4 {
-      color: var(--highlight);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .detail-content p {
-      color: var(--text-color);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .themes {
-      background: var(--card-bg);
-      border: 2px solid var(--card-border);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 15px 30px var(--shadow-color);
-      animation: fadeInUp 1.6s ease-out;
-    }
-
-    .themes h3 {
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .themes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .theme-item {
-      display: flex;
-      align-items: center;
-      padding: 1.2rem;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      border-left: 4px solid var(--highlight);
     }
 
     .theme-item:hover {
-      transform: translateX(8px);
-      box-shadow: 0 8px 25px var(--shadow-color);
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    .theme-icon {
-      width: 28px;
-      height: 28px;
-      margin-right: 1rem;
-      color: var(--accent);
-    }
-
-    .cta-section {
-      text-align: center;
-      margin-top: 2.5rem;
-      animation: fadeInUp 1.8s ease-out;
-    }
-
-    .cta {
-      background: var(--cta-bg);
-      color: white;
-      text-decoration: none;
-      padding: 1.4rem 3rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.4rem;
-      display: inline-block;
+      transform: translateY(-2px);
       transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
-      margin: 0.5rem;
+    }
+
+    .cta-glow {
+      box-shadow: 0 4px 15px rgba(0, 0, 128, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .cta-glow:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 128, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .volunteer-glow {
+      box-shadow: 0 4px 15px rgba(249, 213, 35, 0.3);
+    }
+
+    .volunteer-glow:hover {
+      box-shadow: 0 8px 25px rgba(249, 213, 35, 0.4);
+    }
+
+    /* Enhanced registration buttons */
+    .register-btn {
       position: relative;
-      overflow: hidden;
+      background: linear-gradient(135deg, #0d6efd 0%, #0056b3 50%, #004085 100%);
       border: none;
-      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+      transform: translateY(0);
+      animation: shimmer 3s ease-in-out infinite;
     }
 
-    .cta:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
-    }
-
-    .cta::before {
+    .register-btn::before {
       content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s ease;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
     }
 
-    .cta:hover::before {
+    .register-btn:hover::before {
       left: 100%;
     }
 
-    .cta.volunteer {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    .register-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(13, 110, 253, 0.6);
+      background: linear-gradient(135deg, #0056b3 0%, #004085 50%, #003366 100%);
     }
 
-    .cta.volunteer:hover {
-      box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+    .register-btn .bi {
+      animation: bounce 2s ease-in-out infinite;
     }
 
-    .footer {
-      margin-top: 2.5rem;
-      text-align: center;
-      font-size: 1rem;
-      color: var(--text-color);
-      opacity: 0.8;
-      animation: fadeInUp 2s ease-out;
+    @keyframes shimmer {
+      0%, 100% {
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+      }
+      50% {
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.7), 0 0 30px rgba(13, 110, 253, 0.3);
+      }
     }
 
-    .organizer {
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-3px);
+      }
+      60% {
+        transform: translateY(-1px);
+      }
+    }
+
+    .register-btn:active {
+      transform: translateY(-2px);
+      transition: transform 0.1s;
+    }
+
+    /* Pulsing border effect */
+    .register-btn::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+      background-size: 400%;
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      animation: gradient-border 3s ease infinite;
+    }
+
+    .register-btn:hover::after {
+      opacity: 1;
+    }
+
+    @keyframes gradient-border {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* Add glow text effect */
+    .register-btn-text {
+      position: relative;
+      z-index: 2;
       font-weight: 700;
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
+      color: white !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .organizer:hover {
-      color: var(--highlight);
+    /* Sponsor logos styling */
+    .sponsor-logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      padding: 20px;
+      transition: transform 0.3s ease;
     }
 
-    /* Responsive design */
-    @media (max-width: 1024px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
+    .sponsor-logo-container:hover {
+      transform: scale(1.05);
     }
 
-    @media (max-width: 768px) {
-      .poster {
-        padding: 2rem;
-        margin: 0.5rem;
-      }
-
-      .event-title {
-        font-size: 2.8rem;
-      }
-
-      .sub-title {
-        font-size: 1.4rem;
-      }
-
-      .event-details,
-      .themes,
-      .schedule-section {
-        padding: 1.5rem;
-      }
-
-      .themes-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cta {
-        font-size: 1.2rem;
-        padding: 1.2rem 2.5rem;
-      }
+    .sponsor-logo {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(20%);
+      transition: filter 0.3s ease;
     }
 
-    @media (max-width: 480px) {
-      .event-title {
-        font-size: 2.2rem;
-      }
-
-      .sub-title {
-        font-size: 1.2rem;
-      }
-
-      .detail-item {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .icon {
-        margin-bottom: 0.5rem;
-        margin-right: 0;
-      }
-
-      .content-grid {
-        gap: 1rem;
-      }
+    .sponsor-logo:hover {
+      filter: grayscale(0%);
     }
   </style>
 </head>
 
-<body>
-  <!-- Enhanced animated background elements -->
-  <div class="bg-elements">
-    <div class="leaf leaf-1"></div>
-    <div class="leaf leaf-2"></div>
-    <div class="leaf leaf-3"></div>
-    <div class="leaf leaf-4"></div>
-    <div class="leaf leaf-5"></div>
-    <div class="leaf leaf-6"></div>
+<body class="bg-light">
+  <div class="container-fluid px-0">
+    <!-- Hero Section -->
+    <div class="bg-primary text-white py-5">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10">
+            <h1 class="display-2 fw-bold mb-3">Linux Regional Summit</h1>
+            <h2 class="display-5 fw-bold mb-3">Gippsland 2025</h1>
+              <p class="lead fs-3 mb-3">Celebrating Open Source in Regional Victoria</p>
+              <div class="birthday-badge">
+                <span class="badge bg-warning text-dark fs-5 px-4 py-2 rounded-pill">
+                  🎉 Linux's 34th Birthday Celebration
+                </span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
+    <!-- Main Content -->
+    <div class="container my-5">
+      <!-- Event Details & Schedule Row -->
+      <div class="row g-4 mb-5">
+        <!-- Event Details (Single Card with Two Columns) -->
+        <div class="col-lg-6">
+          <div class="card h-auto border-0 shadow">
+            <div class="card-body p-4">
+              <div class="row g-4">
+                <!-- Pre-Summit Column -->
+                <div class="col-md-6 mb-5 mb-md-0">
+                  <h3 class="card-title text-primary fw-bold mb-4">
+                    <i class="bi bi-calendar-heart-fill me-2"></i>Pre-Summit
+                  </h3>
 
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
-    <div class="particle particle-4"></div>
-    <div class="particle particle-5"></div>
+                  <!-- Date & Time -->
+                  <div class="d-flex align-items-start mb-4 p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-calendar-event text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Date & Time</h5>
+                      <p class="mb-0">Sunday 24th August, 2025<br>10:00 AM - 5:00 PM AEST</p>
+                    </div>
+                  </div>
 
-    <div class="penguin penguin-1"></div>
-    <div class="penguin penguin-2"></div>
+                  <!-- Location -->
+                  <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Location</h5>
+                      <p class="mb-0">Southern Cross Station</p>
+                    </div>
+                  </div>
 
-    <div class="koala"></div>
+                  <!-- Register for Pre-Summit -->
+                  <div class="d-grid mt-4">
+                    <a href="https://lu.ma/4vnhsfkt/?ref=linuxvictoria" target="_blank" rel="noopener"
+                      class="btn register-btn btn-lg w-100"
+                      aria-label="Register for Pre-Summit on Luma (opens in a new tab)">
+                      <span class="register-btn-text">
+                        <i class="bi bi-ticket-perforated-fill me-2"></i>Register for Pre-Summit
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Summit Column -->
+                <div class="col-md-6">
+                  <h3 class="card-title text-primary fw-bold mb-4">
+                    <i class="bi bi-info-circle-fill me-2"></i>Summit
+                  </h3>
+
+                  <!-- Date & Time -->
+                  <div class="d-flex align-items-start mb-4 p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-calendar-event text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Date & Time</h5>
+                      <p class="mb-0">Monday 25th August, 2025<br>10:00 AM - 5:00 PM AEST</p>
+                    </div>
+                  </div>
+
+                  <!-- Location -->
+                  <div class="d-flex align-items-start mb-4 p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Location</h5>
+                      <p class="mb-0">
+                        <a href="https://maps.google.com/?q=Morwell+Innovation+Centre,+Morwell,+Victoria"
+                          target="_blank" class="text-decoration-none" rel="noopener">
+                          Morwell Innovation Centre<br>Morwell, Victoria
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Online Access -->
+                  <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-laptop text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Online Access</h5>
+                      <p class="mb-0">
+                        <a href="https://electronworkshop.com.au/goto/venue/" target="_blank"
+                          class="text-decoration-none" rel="noopener">
+                          Electron Workshop eVenue
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Register for Summit -->
+                  <div class="d-grid mt-4">
+                    <a href="#register" class="btn register-btn btn-lg w-100" aria-label="Register for Summit">
+                      <span class="register-btn-text">
+                        <i class="bi bi-check2-circle me-2"></i>Register for Summit
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <!-- /Summit Column -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Schedule (unchanged) -->
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow">
+            <div class="card-body p-4">
+              <h3 class="card-title text-primary fw-bold mb-4">
+                <i class="bi bi-calendar3 me-2"></i>Event Schedule
+              </h3>
+
+              <!-- Day 1 -->
+              <div class="mb-4">
+                <h5 class="text-primary fw-bold mb-3 border-bottom border-primary pb-2">
+                  Day 1: Sunday, Pre-summit
+                </h5>
+                <div class="row g-2">
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🚂 Train to Gippsland
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🌟 Afternoon activity
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🚂 Train to Melbourne
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day 2 -->
+              <div>
+                <h5 class="text-primary fw-bold mb-3 border-bottom border-primary pb-2">
+                  Day 2: Monday, Summit
+                </h5>
+                <div class="row g-2">
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🚂 Train to Gippsland
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      ☀️ Morning activity
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🍽️ Lunch
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      💻 Afternoon session
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🤝 Networking
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded">
+                      🚂 Train to Melbourne
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Key Themes Section -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-0 shadow">
+            <div class="card-body p-4">
+              <h3 class="card-title text-primary fw-bold mb-4 text-center">
+                <i class="bi bi-lightbulb-fill me-2"></i>Key Themes
+              </h3>
+
+              <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                  <div class="theme-item card border-primary h-100">
+                    <div class="card-body p-3">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-heart-fill text-primary fs-4 me-3 mt-1"></i>
+                        <div>
+                          <h6 class="text-primary fw-bold mb-2">Accessibility & Inclusion</h6>
+                          <small class="text-muted">
+                            Demonstrating that Linux and Open Source are valuable for individuals, youth, businesses,
+                            and community groups — not just technical users.
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="theme-item card border-primary h-100">
+                    <div class="card-body p-3">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-gear-fill text-primary fs-4 me-3 mt-1"></i>
+                        <div>
+                          <h6 class="text-primary fw-bold mb-2">Practical Use Cases</h6>
+                          <small class="text-muted">
+                            Showcasing how Linux can be used on existing laptops without disruption, and how initiatives
+                            like Computerbank Victoria enable affordable, secure access to technology.
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="theme-item card border-primary h-100">
+                    <div class="card-body p-3">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-mortarboard-fill text-primary fs-4 me-3 mt-1"></i>
+                        <div>
+                          <h6 class="text-primary fw-bold mb-2">Youth Engagement & Education</h6>
+                          <small class="text-muted">
+                            Inspiring the younger generation to understand technology and apply open source tools to
+                            solve real-world problems.
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="theme-item card border-primary h-100">
+                    <div class="card-body p-3">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-star-fill text-primary fs-4 me-3 mt-1"></i>
+                        <div>
+                          <h6 class="text-primary fw-bold mb-2">Policy & Community Planning</h6>
+                          <small class="text-muted">
+                            Facilitated discussions on how open source can shape regional development, digital
+                            governance, and policy-making.
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="theme-item card border-primary h-100">
+                    <div class="card-body p-3">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-people-fill text-primary fs-4 me-3 mt-1"></i>
+                        <div>
+                          <h6 class="text-primary fw-bold mb-2">Citizen Participation in Governance</h6>
+                          <small class="text-muted">
+                            Highlighting mechanisms for ordinary citizens to have a direct input in digital governance
+                            and open policy processes.
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                  <div class="theme-item card border-primary h-100">
+                    <div class="card-body p-3">
+                      <div class="d-flex align-items-start">
+                        <i class="bi bi-diagram-3-fill text-primary fs-4 me-3 mt-1"></i>
+                        <div>
+                          <h6 class="text-primary fw-bold mb-2">Ecosystem Building</h6>
+                          <small class="text-muted">
+                            Bringing together local experts, service providers, and stakeholders to create connections,
+                            momentum, and action beyond the summit.
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-5" id="register">
+        <div class="d-md-none d-block">
+          <iframe src="https://lu.ma/embed/event/evt-Sgf7YvTV7ciPPT1/simple" width="600" height="450" frameborder="0"
+            style="height: 125vh; width: 100%;" allow="fullscreen; payment" aria-hidden="false" tabindex="0"
+            class=""></iframe>
+        </div>
+        <div class="d-none d-md-block">
+          <iframe src="https://lu.ma/embed/event/evt-Sgf7YvTV7ciPPT1/simple" width="600" height="450" frameborder="0"
+            style="height: 80vh; width: 100%;" allow="fullscreen; payment" aria-hidden="false" tabindex="0"
+            class=""></iframe>
+        </div>
+      </div>
+
+
+      <!-- Call to Action -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="text-center">
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+              <!-- <a href="https://lu.ma/xoyquthx" class="btn btn-primary btn-lg px-5 py-3 cta-glow" target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-ticket-perforated-fill me-2"></i>Register Now
+              </a>
+              <a href="https://electronworkshop.com.au/goto/venue/"
+                class="btn btn-outline-primary btn-lg px-5 py-3 cta-glow" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-laptop me-2"></i>Join Online
+              </a> -->
+              <a href="https://linuxvictoria.org/volunteer-form/"
+                class="btn btn-warning btn-lg px-5 py-3 volunteer-glow" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-hand-thumbs-up-fill me-2"></i>Volunteer and Advise
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sponsors Section -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-0">
+            <div class="card-body p-4">
+              <!-- <h3 class="card-title text-primary fw-bold mb-4 text-center">
+                <i class="bi bi-heart-fill me-2"></i>Sponsors
+              </h3> -->
+              
+              <div class="row g-4 align-items-center justify-content-center">
+                <!-- Sponsor logos will go here -->
+                <div class="col-6 col-md-4 col-lg-4">
+                  <div class="sponsor-logo-container">
+                    <img src="/assets/images/lrs_2025_logos/LUV_logo.webp" alt="LUV logo" class="sponsor-logo">
+                  </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-4">
+                  <div class="sponsor-logo-container">
+                    <img src="/assets/images/lrs_2025_logos/MIC-blue-x2.png" alt="Morwell Innovation Center Logo" class="sponsor-logo">
+                  </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-4">
+                  <div class="sponsor-logo-container">
+                    <img src="/assets/images/lrs_2025_logos/banner.jpg" alt="Computerbank Logo" class="sponsor-logo">
+                  </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-4">
+                  <div class="sponsor-logo-container">
+                    <img src="/assets/images/lrs_2025_logos/serversaurus_logo.png" alt="serversaurus Logo" class="sponsor-logo">
+                  </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-4">
+                  <div class="sponsor-logo-container">
+                    <img src="/assets/images/lrs_2025_logos/logo_black_hq.png" alt="Electron Workshop Logo" class="sponsor-logo">
+                  </div>
+                </div>
+                
+                <div class="col-6 col-md-4 col-lg-4">
+                  <div class="sponsor-logo-container">
+                    <img src="/assets/images/lrs_2025_logos/Logo_Wide_Fill_Light.png" alt="Linux Victoria Logo" class="sponsor-logo">
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-primary text-white border-0">
+            <div class="card-body text-center py-4">
+              <p class="mb-2 fs-5">
+                Organised by <a href="/" class="text-warning text-decoration-none fw-bold">Linux Victoria</a>
+              </p>
+              <p class="mb-2">Supporting the open-source community since 1993</p>
+              <p class="mb-0 fs-4">🐧 Celebrating Linux, open source, and the power of community across Victoria!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="poster">
-    <!-- Header -->
-    <div class="header">
-      <h1 class="event-title">Linux Regional Summit</h1>
-      <p class="sub-title">Celebrating Open Source in Regional Victoria</p>
-      <div class="birthday-badge">🎉 Linux's 34th Birthday Celebration</div>
-    </div>
-
-    <!-- Content Grid -->
-    <div class="content-grid">
-      <!-- Event Details -->
-      <div class="event-details">
-        <div class="detail-item">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          <div class="detail-content">
-            <h4>Date & Time</h4>
-            <p>Sunday 24th - Monday 25th August, 2025<br>10:00 AM - 5:00 PM AEST</p>
-          </div>
-        </div>
-
-        <a href="https://maps.google.com/?q=Morwell+Innovation+Centre,+Morwell,+Victoria" target="_blank"
-          rel="noopener noreferrer" class="detail-item detail-link">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <div class="detail-content">
-            <h4>Location</h4>
-            <p>Morwell Innovation Centre<br>Morwell, Victoria<br><strong>Hybrid Event</strong> - Join in person or
-              online</p>
-          </div>
-        </a>
-
-        <a href="https://electronworkshop.com.au/goto/venue/" target="_blank" rel="noopener noreferrer"
-          class="detail-item detail-link">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-          <div class="detail-content">
-            <h4>Online Access</h4>
-            <p>Hybrid Event Platform<br>Self-hosted BigBlueButton</p>
-          </div>
-        </a>
-      </div>
-
-      <!-- Schedule Section -->
-      <!-- Schedule Section -->
-      <div class="schedule-section">
-        <h3>📅 Event Schedule</h3>
-
-        <div class="schedule-day">
-          <h4>Day 1: Sunday, Pre-summit</h4>
-          <div class="schedule-item">🚂 Train to Gippsland</div>
-          <div class="schedule-item">🌟 Afternoon activity</div>
-          <div class="schedule-item">🚂 Train to Melbourne</div>
-        </div>
-
-        <div class="schedule-day">
-          <h4>Day 2: Monday, Summit</h4>
-          <div class="schedule-item">🚂 Train to Gippsland</div>
-          <div class="schedule-item">☀️ Morning activity</div>
-          <div class="schedule-item">🍽️ Lunch</div>
-          <div class="schedule-item">💻 Afternoon session</div>
-          <div class="schedule-item">🤝 Networking</div>
-          <div class="schedule-item">🚂 Train to Melbourne</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Key Themes -->
-    <div class="themes">
-      <h3>Key Themes</h3>
-      <div class="themes-grid">
-
-        <div class="theme-item">
-          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-          </svg>
-          <span><strong>Accessibility & Inclusion:</strong> Demonstrating that Linux and Open Source are valuable for
-            individuals, youth, businesses, and community groups — not just technical users.</span>
-        </div>
-
-        <div class="theme-item">
-          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <span><strong>Practical Use Cases:</strong> Showcasing how Linux can be used on existing laptops without
-            disruption, and how initiatives like Computerbank Victoria enable affordable, secure access to
-            technology.</span>
-        </div>
-
-        <div class="theme-item">
-          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="8.5" cy="7" r="4"></circle>
-            <line x1="20" y1="8" x2="20" y2="14"></line>
-            <line x1="23" y1="11" x2="17" y2="11"></line>
-          </svg>
-          <span><strong>Youth Engagement & Education:</strong> Inspiring the younger generation to understand technology
-            and apply open source tools to solve real-world problems.</span>
-        </div>
-
-        <div class="theme-item">
-          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-            </path>
-          </svg>
-          <span><strong>Policy & Community Planning:</strong> Facilitated discussions on how open source can shape
-            regional development, digital governance, and policy-making.</span>
-        </div>
-
-        <div class="theme-item">
-          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
-          </svg>
-          <span><strong>Citizen Participation in Governance:</strong> Highlighting mechanisms for ordinary citizens to
-            have a direct input in digital governance and open policy processes.</span>
-        </div>
-
-        <div class="theme-item">
-          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M4 21v-2a4 4 0 0 1 3-3.87"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <span><strong>Ecosystem Building:</strong> Bringing together local experts, service providers, and
-            stakeholders to create connections, momentum, and action beyond the summit.</span>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- CTA Section -->
-    <div class="cta-section">
-      <a href="https://lu.ma/xoyquthx" class="cta" target="_blank" rel="noopener noreferrer">
-        🎟️ Register Now
-      </a>
-      <a href="https://electronworkshop.com.au/goto/venue/" class="cta" target="_blank" rel="noopener noreferrer">
-        💻 Join Online
-      </a>
-      <a href="https://linuxvictoria.org/volunteer-form/" class="cta volunteer" target="_blank"
-        rel="noopener noreferrer">
-        🤝 Volunteer Help
-      </a>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>Organised by <a href="/" class="organizer">Linux Victoria</a><br>Supporting the open-source community since
-        1993</p>
-      <p style="margin-top: 1rem;">🐧 Celebrating Linux, open source, and the power of community across Victoria!</p>
-    </div>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
