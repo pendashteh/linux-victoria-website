@@ -14,11 +14,11 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 ## 🗓️ Next Event
 
-**LAIT Night Chat No. 7**
+**LAIT Night Chat No. 8**
 
-**Date:** Tuesday, July 19, 2025
+**Date:** Tuesday, August 26, 2025
 
-**Time:** 7:00 PM (AEST)
+**Time:** 9:00 PM (AEST)
 
 **Location:** Online at [Electron Workshop eVenue](https://electronworkshop.com.au/goto/venue/)
 
