@@ -6,18 +6,8 @@
   },
   "eventCards": [
     {
-      "title": "Linux & AI -- Collaboration with MLAI Melbourne",
-      "date": "Tuesday, August 19, 2025",
-      "time": "6:00 PM to 8:00 PM AEST",
-      "location": "912 Collins St, Docklands, VIC (Hybrid)",
-      "link": "/posts/2025-08-19_MLAI-Linux-and-AI",
-      "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
-      "image": "https://secure.meetupstatic.com/photos/event/b/b/7/0/event_529367984.webp",
-      "alt": "MLAI and Linux Victoria"
-    },
-    {
       "title": "Linux Regional Summit",
-      "date": "Sunday 24th to Monday 25th August 2025",
+      "date": "Monday 25th August 2025",
       "time": "10:00 AM to 5:00 PM AEST",
       "location": "Morwell Innovation Centre, Victoria (Hybrid Event)",
       "link": "/linux-regional-summit",
@@ -28,7 +18,7 @@
     {
       "title": "LAIT Night Chats",
       "date": "Linux & AI Tuesday Night Discussions",
-      "time": "7:00 PM – 8:00 PM AEST",
+      "time": "9:00 PM – 10:00 PM AEST",
       "location": "Electron Workshop eVenue",
       "link": "/posts/lait-night-chat-linux-and-ai",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
@@ -43,6 +33,16 @@
       "link": "/posts/2025-09-02_Town-Hall-Meeting-September",
       "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
       "image": "/assets/images/Town-Hall-Meeting-September2025_tumbnail.webp",
+      "alt": "Town Hall"
+    },
+    {
+      "title": "Pre-Summit event",
+      "date": "Sunday, August 24th, 2025",
+      "time": "10AM to 5PM AEST",
+      "location": "Meet at Southern Cross to take train to Gippsland",
+      "link": "https://lu.ma/4vnhsfkt",
+      "join_link": "",
+      "image": "/assets/images/Linux_Regional_Pre_Summit_2025.webp",
       "alt": "Town Hall"
     }
   ],
