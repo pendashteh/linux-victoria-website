@@ -38,28 +38,13 @@
   ],
   "navbarOptions": [
     {
-      "title": "Events",
-      "link": "https://www.meetup.com/linux-users-of-victoria/events",
-      "target": "yes"
-    },
-    {
       "title": "Contact Us",
       "link": "/contact",
       "target": "no"
     },
     {
-      "title": "Wiki",
-      "link": "https://wiki.luv.asn.au/mediawiki/index.php?title=Main_Page",
-      "target": "yes"
-    },
-    {
-      "title": "Mailing Lists",
-      "link": "https://lists.luv.asn.au/mailman3/postorius/lists/",
-      "target": "yes"
-    },
-    {
-      "title": "FAQ",
-      "link": "/posts/faq",
+      "title": "Engage",
+      "link": "/engage",
       "target": "no"
     }
   ],

@@ -120,63 +120,6 @@ body {
   overflow: unset !important;
 }
 
-.sk-meetup-event-thumb-section-no-picture {
-  flex-shrink: 0;
-}
-
-.sk-meetup-event-initial-details-section {
-  flex: 1;
-  padding: 20px 30px !important;
-  margin-left: 10px;
-}
-
-.sk_branding {
-  opacity: 0;
-  height: 0px;
-  padding: 0px !important;
-}
-
-.sk_meetup_events_grid_view_title {
-  display: none !important;
-}
-
-.sk-meetup-event-thumb-section .date {
-  background-color: rgb(0 0 128 / 80%) !important;
-}
-
-.sk-meetup-event-thumb-section .month {
-  background-color: rgb(0 0 128 / 30%) !important;
-}
-
-.event-btn.read-more-btn {
-  background-color: rgb(0 0 128 / 70%) !important;
-  border-color: rgb(255 255 255 / 100%) !important;
-}
-
-.event-btn.read-more-btn:hover {
-  background-color: rgb(0 0 128 / 90%) !important;
-  border-color: rgb(255 255 255 / 100%) !important;
-}
-
-.sk_meetup_events_bottom_follow_btn {
-  background-color: rgb(0 0 128 / 70%) !important;
-  border-color: rgb(255 255 255 / 100%) !important;
-}
-
-.sk_meetup_events_bottom_follow_btn:hover {
-  background-color: rgb(0 0 128 / 90%) !important;
-  border-color: rgb(255 255 255 / 100%) !important;
-}
-
-.sk_meetup_events_options_btn {
-  display: none !important;
-}
-
-.sk_meetup_events_load_more_btn_container {
-  display: none;
-  justify-content: center;
-}
-
 #penguins_text {
   margin-left: -0.5rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -215,4 +158,40 @@ img[alt="LUV Logo"] {
   margin: 1em 0;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Search Modal Styles */
+.search-results .search-result-item:hover {
+    background-color: var(--bs-primary-bg-subtle) !important;
+    border-color: rgba(var(--bs-primary-rgb), 0.5) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.modal-content {
+    backdrop-filter: blur(10px);
+}
+
+/* Navbar search button hover effects */
+#navbar-main .btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+/* Text truncation for search results */
+.search-title, .search-subtitle {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Loading spinner */
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
 }
