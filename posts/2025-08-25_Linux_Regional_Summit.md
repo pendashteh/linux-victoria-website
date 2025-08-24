@@ -16,7 +16,7 @@ preview_image: "http://linuxvictoria.org/assets/images/Linux_Regional_Summit_202
 You can now find the full program on <https://linuxvictoria.org/linux-regional-summit>
 
 <br>
-<a id="travel">Travel Facilities</a>
+<a id="travel"></a>
 
 ### Travel Facilities
 Those who are interested in attending Linux Regional Summit in person, we have facilitated pick up from Morwell Station in two rounds and drop off at the end.
@@ -28,7 +28,7 @@ Leave Southern Cross station with 11:23am Traralgon Service and get off at Morwe
 Drop off to Morwell Station at 5:15pm for catching the 5:28pm service for arrival at Southern Cross at 7:48pm.
 
 <br>
-<a id="linux-regional-discourse">Linux Regional Discourse</a>
+<a id="linux-regional-discourse"></a>
 
 ### Linux Regional Discourse
 Due to many requests for joining online, we have restructured the afternoon program into a hybrid session.
