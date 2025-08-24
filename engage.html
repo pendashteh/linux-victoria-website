@@ -6,7 +6,8 @@ layout: layout.html
 <section class="bg-body mt-5">
     <div class="container">
         <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm">
-            <h2 class="mb-3 text-primary">Linux Victoria - Volunteer Expression of Interest</h2>
+            <h2 class="mb-3 text-primary">Engage with Linux Victoria</h2>
+                    <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or advising us along the way</p>
             <form class="needs-validation col-md-6" name="VolunteerForm" method="POST"
                 action="/.netlify/functions/createJiraIssue" id="VolunteerForm" novalidate>
                 <div class="mb-3">
@@ -27,7 +28,6 @@ layout: layout.html
                 <!-- NEW: Support Areas (checkbox group) -->
                 <fieldset class="mb-3">
                     <!-- <legend class="form-label mb-2">Support Area</legend> -->
-                    <p class="text-secondary small mb-2">Which area are you interested in helping?</p>
 
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="sa-online" name="supportAreas"
@@ -63,6 +63,12 @@ layout: layout.html
                         <input class="form-check-input" type="checkbox" id="sa-lai" name="supportAreas"
                             value="Linux & AI events and documentation">
                         <label class="form-check-label" for="sa-lai">Linux & AI events and documentation</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="volunteer" name="supportAreas"
+                            value="Volunteer">
+                        <label class="form-check-label" for="sa-mlai">Volunteer</label>
                     </div>
                 </fieldset>
 
@@ -146,7 +152,9 @@ layout: layout.html
 
         'lai': 'Linux & AI events and documentation',
         'linux-ai': 'Linux & AI events and documentation',
-        'docs': 'Linux & AI events and documentation'
+        'docs': 'Linux & AI events and documentation',
+
+        'volunteer': 'General Volunteer helper',
       };
 
       const targets = new Set(
