@@ -244,6 +244,34 @@
     .sponsor-logo:hover {
       filter: grayscale(0%);
     }
+
+    /* Hybrid event badge styling */
+    .hybrid-badge {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      margin-left: 0.5rem;
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+    }
+
+    .hybrid-badge:hover {
+      background: linear-gradient(135deg, #218838, #1aa085);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+    }
+
+    .hybrid-badge i {
+      font-size: 0.6rem;
+      margin-right: 0.2rem;
+    }
   </style>
 </head>
 
@@ -411,10 +439,14 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded border border-primary text-wrap">
-                      2:00 PM – 
-                      <a href="/linux-regional-discourse">Linux Regional Discourse</a>
-                      
+                    <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded border border-primary text-wrap d-flex align-items-center justify-content-between">
+                      <span>
+                        2:00 PM 
+                        <a href="/linux-regional-discourse">Linux Regional Discourse</a>
+                      </span>
+                      <a href="/posts/2025-08-25_linux_regional_summit/#Online" class="hybrid-badge">
+                        <i class="bi bi-wifi"></i>Hybrid
+                      </a>
                     </div>
                   </div>
                   <div class="col-12">
