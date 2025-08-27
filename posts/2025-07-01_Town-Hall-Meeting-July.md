@@ -1,6 +1,6 @@
 ## Linux Victoria - Town Hall Meeting July
 
-Tuesday, July 1st, 2025
+Tuesday, June 1st, 2025
 7:00 PM to 9:00 PM AEST
 
 ## Details
@@ -15,7 +15,14 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 
 ## Key Discussion Points
 
-- TBC
+- Planning for Q1, 2026 (July - Sep)
+- Review of financial year 2025-2026
+- Planning of Linux Regional Summit
+- Planning for Software Freedom Day
+- Updates on Certification
+- Formation of teams for delivery
+- Managing infrastruture
+- New members and partners
 
 ## How To Join
 
@@ -24,7 +31,7 @@ Link to join:
 We use a self-hosted BBB instance for this meeting.
 
 ## Date
-Tuesday, July 1st, 2025  
+Tuesday, July 1, 2025  
 7:00 PM to 9:00 PM AEST
 
 ## Schedule
@@ -35,4 +42,4 @@ Tuesday, July 1st, 2025
 
 
 Meetup Link:
-https://www.meetup.com/linux-users-of-victoria/events/307692794/
+[https://www.meetup.com/linux-users-of-victoria/events/308597208/](https://www.meetup.com/linux-users-of-victoria/events/308597208/)

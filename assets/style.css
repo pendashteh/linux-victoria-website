@@ -1,3 +1,4 @@
+/* style.css */
 :root {
   --bs-primary: #753f98 !important;
   --bs-success: #99ce65 !important;
@@ -94,6 +95,28 @@ body {
   box-shadow: 1px 1px 4px rgb(0 0 0 / 10%);
   display: flex !important;
   align-items: flex-start;
+}
+
+.sk_meetup_events_search_date {
+  display: none !important;
+}
+
+.sk_meetup_event_tab_option {
+  width: auto !important;
+}
+
+@media (width < 430px) {
+  .events-tabs .sk_meetup_event_tab_option {
+    width: auto !important;
+  }
+}
+
+.grid-content {
+  overflow: unset !important;
+}
+
+.grid-item-meetup-event {
+  overflow: unset !important;
 }
 
 #penguins_text {
@@ -200,4 +223,39 @@ img[alt="LUV Logo"] {
 .hover-primary:hover {
   --bs-text-opacity: 1;
     color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+}
+
+/* Search Modal Styles */
+.search-results .search-result-item:hover {
+    background-color: var(--bs-primary-bg-subtle) !important;
+    border-color: rgba(var(--bs-primary-rgb), 0.5) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.modal-content {
+    backdrop-filter: blur(10px);
+}
+
+/* Navbar search button hover effects */
+#navbar-main .btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+/* Text truncation for search results */
+.search-title, .search-subtitle {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Loading spinner */
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
 }
