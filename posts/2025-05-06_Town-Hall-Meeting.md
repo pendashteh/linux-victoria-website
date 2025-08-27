@@ -1,7 +1,4 @@
----
-aliases:
-- /posts/2025-05-06_Open-Committee-Meeting
----
+
 
 ## Linux Victoria - Town Hall Meeting
 
