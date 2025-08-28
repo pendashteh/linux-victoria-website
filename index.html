@@ -3,7 +3,7 @@ title: "Linux Victoria"
 layout: layout.html
 ---
 
-<section class="bg-body mt-5">
+<section class="bg-body mt-3 mt-md-5">
     <div class="container-fluid px-0">
 
         <!-- Filter upcoming events -->
@@ -89,25 +89,33 @@ layout: layout.html
         <br>
         {% endif %}
 
-        <!-- Filter past events -->
+        <!-- Filter past events (limit to 3 for home page) -->
         {% assign pastCards = "" | split: "" %}
+        {% assign pastCardCount = 0 %}
 
         {% for card in homeCards %}
-        {% if card.past == true %}
-        {% assign pastCards = pastCards | push: card %}
-        {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday Night
-        Discussions" %}
-        {% assign cardTimestamp = card.date | date: "%s" %}
-        {% if cardTimestamp <= currentTimestamp %} {% assign pastCards=pastCards | push: card %} {% endif %} {% endif %}
-            {% endfor %} <!-- Only show previous events section if there are past events -->
+        {% if pastCardCount < 3 %} {% if card.past==true %} {% assign pastCards=pastCards | push: card %} {% assign
+            pastCardCount=pastCardCount | plus: 1 %} {% elsif card.date !=nil and card.date !="Date to be announced" and
+            card.date !="Linux & AI Tuesday Night
+        Discussions" %} {% assign cardTimestamp=card.date | date: "%s" %} {% if cardTimestamp <=currentTimestamp %} {%
+            assign pastCards=pastCards | push: card %} {% assign pastCardCount=pastCardCount | plus: 1 %} {% endif %} {%
+            endif %} {% endif %} {% endfor %} <!-- Only show previous events section if there are past events -->
             {% if pastCards.size > 0 %}
             <!-- Previous Events and Posts - Blog Style -->
             <section class="container">
-                <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Previous Events and Posts</h3>
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+                    <h3 class="text-primary fw-semibold text-center text-lg-start mb-2 mb-md-0">Recent Events and Posts
+                    </h3>
+                    <a href="/events-and-posts"
+                        class="btn btn-outline-primary btn-sm align-self-start align-self-md-auto">
+                        <i class="bi bi-arrow-right me-2"></i>View All Events & Posts
+                    </a>
+                </div>
 
                 <div class="row row-gap-4">
                     {% for card in pastCards %}
-                    <div class="col-12 col-md-6 col-xl-4 pb-3">
+                    <div class="col-12 col-md-4 pb-3">
                         <article
                             class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 h-100 overflow-hidden">
                             <!-- Featured Image -->
@@ -165,6 +173,25 @@ layout: layout.html
                     </div>
                     {% endfor %}
                 </div>
+
+                <!-- Show more indicator if there are more than 3 past events -->
+                {% assign totalPastCards = 0 %}
+                {% for card in homeCards %}
+                {% if card.past == true %}
+                {% assign totalPastCards = totalPastCards | plus: 1 %}
+                {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday
+                Night Discussions" %}
+                {% assign cardTimestamp = card.date | date: "%s" %}
+                {% if cardTimestamp <= currentTimestamp %} {% assign totalPastCards=totalPastCards | plus: 1 %} {% endif
+                    %} {% endif %} {% endfor %} {% if totalPastCards> 3 %}
+                    <div class="text-center mt-4">
+                        <p class="text-muted mb-3">Showing {{ pastCards.size }} of {{ totalPastCards }} posts</p>
+                        <a href="/events-and-posts" class="btn btn-outline-primary">
+                            <i class="bi bi-arrow-right me-2"></i>View All Events & Posts
+                        </a>
+                    </div>
+                    {% endif %}
+
             </section>
             {% endif %}
 
@@ -199,7 +226,8 @@ layout: layout.html
                                 <div
                                     class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 shadow">
                                     <p class="fs-5">
-                                        Linux Victoria is a team effort, we actively look for new ideas, ways to connect to other organisations and help in running current activities.
+                                        Linux Victoria is a team effort, we actively look for new ideas, ways to connect
+                                        to other organisations and help in running current activities.
                                     </p>
                                     <p class="fs-5">
                                         Stay tuned and reach out if we could help or if you have an offer for the group.
