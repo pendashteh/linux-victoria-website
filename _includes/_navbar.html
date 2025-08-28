@@ -49,12 +49,12 @@
                 class="flex-column flex-lg-wrap flex-nowrap flex-sm-row gap gap-xxl-3 navbar-nav text-uppercase justify-content-end">
                 <li class="nav-item px-2 px-sm-3 d-block d-sm-none">
                     <a class="fs-5 fw-semibold rounded-3 text-secondary text-decoration-none" href="/">{{
-                        config.site.title }}</a><br>
+                        site.title }}</a><br>
                     <a class="fs-5 rounded-3 text-secondary text-decoration-none" href="/">{{
-                        config.site.subtitle }}</a>
+                        site.subtitle }}</a>
                 </li>
 
-                {% for option in config.navbarOptions %}
+                {% for option in navbarOptions %}
                 <li class="nav-item">
                     {% if option.target == 'yes' %}
                     <a class="fs-5 fw-semibold nav-link px-2 px-sm-3 rounded-3 icon-link icon-link-hover"

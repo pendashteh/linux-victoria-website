@@ -10,7 +10,7 @@ layout: layout.html
         {% assign upcomingCards = "" | split: "" %}
         {% assign currentTimestamp = "now" | date: "%s" %}
 
-        {% for card in config.homeCards %}
+        {% for card in homeCards %}
         {% unless card.past == true %}
         {% if card.date == nil or card.date contains "Date to be announced" or card.date contains "Tuesday Night
         Discussions" %}
@@ -92,7 +92,7 @@ layout: layout.html
         <!-- Filter past events -->
         {% assign pastCards = "" | split: "" %}
 
-        {% for card in config.homeCards %}
+        {% for card in homeCards %}
         {% if card.past == true %}
         {% assign pastCards = pastCards | push: card %}
         {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday Night
@@ -247,7 +247,7 @@ layout: layout.html
             <div class="mb-5 container">
                 <h3 class="text-primary fw-semibold mb-4 text-center text-lg-start">Useful Links</h3>
                 <div class="row row-gap-2">
-                    {% for link in config.usefulLinks %}
+                    {% for link in usefulLinks %}
                     <a href="{{ link.link }}" target="_blank"
                         class="hover-primary col-12 text-decoration-none h4 text-dark border-start border-primary border-5 ms-2 mb-0">
                         {{ link.title }}
