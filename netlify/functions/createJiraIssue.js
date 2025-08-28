@@ -110,7 +110,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 201,
-      body: JSON.stringify({ message: "Jira issue created successfully", issueKey: data.key })
+      body: JSON.stringify({ message: "Thank you! Your submission has been receved!", jiraKey: data.key })
     };
   } catch (error) {
     return {
