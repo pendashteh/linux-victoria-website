@@ -98,7 +98,8 @@
   ],
   "navbarOptions": [
     { "title": "Contact Us", "link": "/contact", "target": "no" },
-    { "title": "Engage", "link": "/engage", "target": "no" }
+    { "title": "Engage", "link": "/engage", "target": "no" },
+    { "title": "LUV", "link": "/luv", "target": "no" }
   ],
   "usefulLinks": [
     { "title": "LUV Monthly Activities Summary", "link": "https://wiki.luv.asn.au/mediawiki/index.php?title=LUV:Current_events" },
