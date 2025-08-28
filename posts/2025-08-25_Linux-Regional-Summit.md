@@ -1,4 +1,6 @@
 ---
+title: Details of Linux Regional Summit Gippsland 2025
+description: Find out more about travel facilites, the Linux Regional Discourse and joining online.
 preview_image: "http://linuxvictoria.org/assets/images/Linux_Regional_Summit_2025.png"
 ---
 
@@ -30,7 +32,7 @@ Drop off to Morwell Station at 5:15pm for catching the 5:28pm service for arriva
 <br>
 <a id="linux-regional-discourse"></a>
 
-### Linux Regional Discourse
+### Linux Regional Discourse    
 Due to many requests for joining online, we have restructured the afternoon program into a hybrid session.
 
 The session will run from 2pm to 4pm and will be available to join online.
@@ -44,24 +46,3 @@ To stay tuned sign up on meetup <https://www.meetup.com/linux-users-of-victoria/
 ### Stay Tuned
 
 To receive updates about the development of this topic register your interest on [https://linuxvictoria.org/engage/](https://linuxvictoria.org/engage/?supportAreas=Linux%20Regional%20Summit)
-
-
-
-<!-- ## How To Join
-
-📍 **In Person:**  
-Morwell Innovation Centre, Morwell, Victoria
-
-💻 **Online Access:**  
-[Go to e-venue and Join Online](https://venue.electronworkshop.com.au/r/linux-victoria)  
-This event will be hosted via our self-hosted BigBlueButton (BBB) platform.
-
-## Date & Time
-
-**Monday, August 25, 2025**  
-**10:00 AM to 5:00 PM AEST**
-
-
----
-
-We look forward to seeing you there — in Morwell or online — as we celebrate Linux, open source, and the power of community across Victoria! 🐧 -->

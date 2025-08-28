@@ -1,3 +1,8 @@
+---
+title: June Town Hall Meeting - Linux Victoria
+description: Join us for Linux Victoria's monthly town hall meeting. 
+---
+
 ## Linux Victoria - Town Hall Meeting June
 
 Tuesday, June 3rd, 2025
@@ -35,4 +40,4 @@ Tuesday, June 3, 2025
 
 
 Meetup Link:
-https://www.meetup.com/linux-users-of-victoria/events/307692794/
+<https://www.meetup.com/linux-users-of-victoria/events/307692794/>

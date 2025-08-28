@@ -1,3 +1,8 @@
+---
+title: September Town Hall Meeting - Linux Victoria
+description: Join us for Linux Victoria's monthly town hall meeting.
+---
+
 ## Linux Victoria - Town Hall Meeting September
 
 Tuesday, September 2nd, 2025 

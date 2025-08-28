@@ -1,4 +1,6 @@
 ---
+title: Linux and AI -- Linux Victoria in collaboration with MLAI Melbourne
+description: DeepSeek rattled NVIDIA's stock and reminded many of us just how much you can gain from running an LLM locally—especially for those who still hadn't tried Meta's llama.
 preview_image: "http://linuxvictoria.org/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png"
 ---
 
