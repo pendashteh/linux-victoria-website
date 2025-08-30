@@ -1,4 +1,4 @@
-// /assets/js/search.js — Bootstrap-only Pagefind search with tags + preview image
+// /assets/js/search.js — Bootstrap-only Pagefind search with tags + right-side preview image
 
 let pf, pfReady = false;
 
@@ -61,8 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsEl = document.getElementById('searchResults');
     resultsEl.innerHTML = emptyStateHTML();
     input?.focus();
-    // warm index quietly
-    ensurePagefind();
+    ensurePagefind(); // warm quietly
   });
 });
 
@@ -107,43 +106,43 @@ async function performSearch() {
     const previewImg = r.meta?.preview_image || null;
     const preview = esc(truncate(desc || r.excerpt?.replace(/<[^>]*>/g, '') || '', 140));
 
-    // badges: prefer all tags; if none, omit badge
+    // badges: prefer all tags; if none, omit
     const badges = tags.length
       ? tags.map(t => `<span class="badge rounded-pill text-bg-primary me-2 mb-2">${esc(t)}</span>`).join('')
       : '';
 
-    // right-side column: thumbnail (bigger on mobile), plus arrow
-    const imgHTMLRight = previewImg ? `
-      <div class="d-flex flex-column align-items-end ms-3">
-        <!-- Mobile: a little larger now -->
+    // Right-side media column:
+    // - On mobile, this whole column stacks UNDER the text because we use flex-column on the parent.
+    // - Slightly larger image on mobile, larger again on sm+.
+    const rightCol = previewImg ? `
+      <div class="d-flex flex-column align-items-end ms-sm-3 mt-3 mt-sm-0">
+        <!-- mobile -->
         <img src="${esc(previewImg)}" alt="${title}"
-            class="img-fluid rounded-3 d-sm-none"
-            style="width:120px;height:auto;">
-        <!-- sm+: slightly bigger -->
+             class="img-fluid rounded-3 d-sm-none"
+             style="width:140px;height:auto;">
+        <!-- sm+ -->
         <img src="${esc(previewImg)}" alt="${title}"
-            class="img-fluid rounded-3 d-none d-sm-block"
-            style="width:160px;height:auto;">
+             class="img-fluid rounded-3 d-none d-sm-block"
+             style="width:180px;height:auto;">
         <i class="bi bi-arrow-right fs-4 text-primary mt-2 d-none d-sm-block"></i>
       </div>
-      ` : `
-        <!-- No image? keep the arrow on the right for sm+ -->
-        <div class="text-primary d-none d-sm-flex align-items-center ms-3">
-          <i class="bi bi-arrow-right fs-4"></i>
-        </div>
-      `;
+    ` : `
+      <div class="text-primary d-none d-sm-flex align-items-center ms-sm-3 mt-sm-0 mt-3">
+        <i class="bi bi-arrow-right fs-4"></i>
+      </div>
+    `;
 
     html += `
-      <a href="${url}" class="list-group-item list-group-item-action bg-body-tertiary border-0 shadow-sm rounded-3 p-3 mb-3">
-        <div class="d-flex align-items-start">
-          <div class="flex-grow-1 pe-2">
+      <a href="${url}" class="list-group-item list-group-item-action hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border border-primary border-opacity-25 overflow-hidden position-relative p-3 mb-3">
+        <div class="d-flex flex-column flex-sm-row align-items-start">
+          <div class="flex-grow-1 pe-0 pe-sm-2">
             <div class="mb-2 d-flex flex-wrap align-items-center">${badges}</div>
             <h6 class="mb-1 text-primary">${title}</h6>
             <p class="mb-0 small text-secondary">${preview}</p>
           </div>
-          ${imgHTMLRight}
+          ${rightCol}
         </div>
       </a>`;
-
   }
   html += '</div>';
   resultsEl.innerHTML = html;
