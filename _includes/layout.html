@@ -1,12 +1,16 @@
 {% include '_head.html' %}
 
-<main>
+<main data-pagefind-ignore>
+  {% include '_navbar.html' %}
 
-    {% include '_navbar.html' %}
-
-    {{ content }}
-
+  {{ content }}
 </main>
 
-
-{% include '_footer.html' %}
+<!-- Hidden block that Pagefind WILL index (title + description only) -->
+<div data-pagefind-body class="visually-hidden" aria-hidden="true"
+     style="position:absolute;left:-9999px;opacity:0;">
+  <h1 data-pagefind-meta="title">{{ title }}</h1>
+  <p data-pagefind-meta="description">
+    {% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}
+  </p>
+</div>

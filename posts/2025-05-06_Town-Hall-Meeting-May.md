@@ -1,6 +1,10 @@
 ---
 title: May Town Hall Meeting - Linux Victoria
 description: Join us for Linux Victoria's monthly town hall meeting. In the May town hall we are discussing the April Report, Future Roadmap, Regional Summit Planning, Install Fests, Training Workshops, Domain Transfer
+tags:
+  - Event
+  - Town
+  - Hall
 ---
 
 ## Linux Victoria - Town Hall Meeting

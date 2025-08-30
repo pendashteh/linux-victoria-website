@@ -1,6 +1,7 @@
 ---
 title: June Town Hall Meeting - Linux Victoria
 description: Join us for Linux Victoria's monthly town hall meeting. 
+tags: ["Event", "Town Hall", "2025"]
 ---
 
 ## Linux Victoria - Town Hall Meeting June

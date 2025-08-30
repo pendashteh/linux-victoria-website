@@ -1,236 +1,150 @@
-let searchData = [];
-let isSearchDataLoaded = false;
+// /assets/js/search.js — Bootstrap-only Pagefind search with tags + preview image
 
-// Function to extract search data from all pages
-async function loadSearchData() {
-    if (isSearchDataLoaded) return;
-    
-    try {
-        // Get all links from the current page to discover other pages
-        const links = Array.from(document.querySelectorAll('a[href]'))
-            .map(link => link.href)
-            .filter(href => {
-                // Filter for internal pages only
-                return href.includes(window.location.origin) && 
-                       !href.includes('#') && 
-                       !href.includes('mailto:') && 
-                       !href.includes('tel:') &&
-                       !href.includes('.pdf') &&
-                       !href.includes('.jpg') &&
-                       !href.includes('.png');
-            })
-            .filter((href, index, arr) => arr.indexOf(href) === index); // Remove duplicates
+let pf, pfReady = false;
 
-        // Add current page
-        links.unshift(window.location.href);
-
-        // Extract data from each page
-        const promises = links.slice(0, 20).map(async (url) => { // Limit to 20 pages for performance
-            try {
-                const response = await fetch(url);
-                if (!response.ok) return null;
-                
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                // Extract meta information
-                const title = doc.querySelector('title')?.textContent?.trim() || 
-                             doc.querySelector('meta[property="og:title"]')?.content?.trim() ||
-                             doc.querySelector('h1')?.textContent?.trim() ||
-                             'Untitled';
-                
-                const description = doc.querySelector('meta[name="description"]')?.content?.trim() ||
-                                  doc.querySelector('meta[property="og:description"]')?.content?.trim() ||
-                                  doc.querySelector('meta[name="twitter:description"]')?.content?.trim() ||
-                                  doc.querySelector('p')?.textContent?.trim()?.substring(0, 150) ||
-                                  'No description available';
-                
-                const keywords = doc.querySelector('meta[name="keywords"]')?.content?.trim() || '';
-                
-                // Try to determine category from URL or content
-                let category = 'page';
-                const urlLower = url.toLowerCase();
-                if (urlLower.includes('event')) category = 'events';
-                else if (urlLower.includes('workshop')) category = 'workshops';
-                else if (urlLower.includes('tutorial')) category = 'tutorials';
-                else if (urlLower.includes('volunteer')) category = 'volunteer';
-                else if (urlLower.includes('newsletter')) category = 'newsletter';
-                else if (urlLower.includes('community') || urlLower.includes('mailing')) category = 'community';
-                else if (urlLower.includes('about')) category = 'about';
-                else if (urlLower.includes('contact')) category = 'contact';
-                
-                // Extract date if available
-                const dateElement = doc.querySelector('time[datetime]') || 
-                                  doc.querySelector('.date') || 
-                                  doc.querySelector('[class*="date"]');
-                const date = dateElement?.getAttribute('datetime') || 
-                           dateElement?.textContent?.trim() || '';
-
-                return {
-                    title: title,
-                    subtitle: description,
-                    category: category,
-                    keywords: `${title} ${description} ${keywords}`.toLowerCase(),
-                    url: url,
-                    date: date
-                };
-            } catch (error) {
-                console.warn('Error loading page:', url, error);
-                return null;
-            }
-        });
-
-        const results = await Promise.all(promises);
-        searchData = results.filter(item => item !== null);
-        
-        // Add some default entries for common searches
-        searchData.push(
-            { title: "Linux Victoria Newsletter", subtitle: "Stay updated with our latest news and events", category: "newsletter", keywords: "newsletter updates news", url: "#newsletter" },
-            { title: "Volunteer Opportunities", subtitle: "Help Linux Victoria grow and support the community", category: "volunteer", keywords: "volunteer help contribute community", url: "/volunteer-form" },
-            { title: "Mailing Lists", subtitle: "Join our discussion forums and community conversations", category: "community", keywords: "mailing list discussion forum luv", url: "#mailing-lists" }
-        );
-        
-        isSearchDataLoaded = true;
-    } catch (error) {
-        console.error('Error loading search data:', error);
-        // Fallback to basic search data if loading fails
-        searchData = [
-            { title: "Linux Victoria Newsletter", subtitle: "Stay updated with our latest news", category: "newsletter", keywords: "newsletter updates news", url: "#newsletter" },
-            { title: "Volunteer Opportunities", subtitle: "Help Linux Victoria grow", category: "volunteer", keywords: "volunteer help contribute community", url: "/volunteer-form" },
-            { title: "Mailing Lists", subtitle: "Join our discussion forums", category: "community", keywords: "mailing list discussion forum luv", url: "#mailing-lists" }
-        ];
-        isSearchDataLoaded = true;
-    }
+async function ensurePagefind() {
+  if (pfReady) return;
+  pf = await import("/pagefind/pagefind.js");  // served from _site/pagefind/
+  await pf.init();
+  pfReady = true;
 }
 
-function truncateText(text, maxLines = 2) {
-    const maxChars = maxLines === 2 ? 120 : 60; // Approximate characters for 2 lines
-    if (text.length <= maxChars) return text;
-    return text.substring(0, maxChars).trim() + '...';
+// Navbar button calls this
+function openSearch() {
+  const el = document.getElementById('searchModal');
+  const modal = bootstrap.Modal.getOrCreateInstance(el);
+  modal.show();
 }
 
-async function openSearch() {
-    const modal = new bootstrap.Modal(document.getElementById('searchModal'));
-    modal.show();
-    
-    // Show loading state
-    document.getElementById('searchResults').innerHTML = `
-        <div class="text-center py-4">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <p class="text-muted mt-2">Loading search data...</p>
-        </div>`;
-    
-    // Load search data if not already loaded
-    if (!isSearchDataLoaded) {
-        await loadSearchData();
-    }
-    
-    setTimeout(() => {
-        document.getElementById('searchInput').focus();
-        document.getElementById('searchResults').innerHTML = '<div class="text-muted text-center py-4"><i class="bi bi-search fs-1 d-block mb-3"></i>Start typing to search...</div>';
-    }, 500);
+function esc(s) {
+  const map = { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;', "'":'&#39;' };
+  return (s || '').replace(/[&<>"']/g, m => map[m]);
+}
+function truncate(text, n = 140) {
+  const t = (text || '').trim();
+  return t.length > n ? t.slice(0, n).trim() + '…' : t;
+}
+function emptyStateHTML() {
+  return `
+    <div class="text-muted text-center py-4">
+      <i class="bi bi-search fs-1 d-block mb-3"></i>
+      Start typing to search…
+    </div>`;
 }
 
-function performSearch() {
-    const query = document.getElementById('searchInput').value.toLowerCase().trim();
-    const resultsContainer = document.getElementById('searchResults');
-    
-    if (query.length === 0) {
-        resultsContainer.innerHTML = '<div class="text-muted text-center py-4"><i class="bi bi-search fs-1 d-block mb-3"></i>Start typing to search...</div>';
-        return;
+// Merge tags from meta and filters; drop generic 'post/page'
+function extractTags(meta, filters) {
+  const out = [];
+  const seen = new Set();
+  const skip = new Set(['post','posts','page','pages']);
+
+  function addAll(arr) {
+    for (const raw of arr || []) {
+      const s = String(raw).trim();
+      const k = s.toLowerCase();
+      if (!s || skip.has(k) || seen.has(k)) continue;
+      seen.add(k);
+      out.push(s);
     }
+  }
+  const m = meta?.tags;
+  addAll(Array.isArray(m) ? m : (m ? String(m).split(/[,|]/) : []));
+  const f = (filters?.tags ?? filters?.tag);
+  addAll(Array.isArray(f) ? f : (f ? [f] : []));
+  return out;
+}
 
-    if (query.length < 2) {
-        resultsContainer.innerHTML = '<div class="text-muted text-center py-4">Type at least 2 characters to search...</div>';
-        return;
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const modalEl = document.getElementById('searchModal');
+  modalEl?.addEventListener('shown.bs.modal', () => {
+    const input = document.getElementById('searchInput');
+    const resultsEl = document.getElementById('searchResults');
+    resultsEl.innerHTML = emptyStateHTML();
+    input?.focus();
+    // warm index quietly
+    ensurePagefind();
+  });
+});
 
-    const results = searchData.filter(item => 
-        item.keywords.includes(query) ||
-        item.title.toLowerCase().includes(query) ||
-        item.subtitle.toLowerCase().includes(query)
-    ).slice(0, 10); // Limit to 10 results
+// Called by your input's oninput
+async function performSearch() {
+  const input = document.getElementById('searchInput');
+  const resultsEl = document.getElementById('searchResults');
+  const q = (input?.value || '').trim();
 
-    if (results.length === 0) {
-        resultsContainer.innerHTML = `
-            <div class="text-center py-4">
-                <i class="bi bi-exclamation-circle text-warning fs-1 d-block mb-3"></i>
-                <p class="text-muted">No results found for "${query}"</p>
-                <small class="text-muted">Try different keywords or browse our events above</small>
-            </div>`;
-        return;
-    }
+  if (q.length < 2) {
+    resultsEl.innerHTML = emptyStateHTML();
+    return;
+  }
 
-    resultsContainer.innerHTML = results.map(item => `
-        <div class="search-result-item border rounded-3 p-3 mb-2 bg-light hover-border-primary" 
-             onclick="selectSearchResult('${item.url}')" style="cursor: pointer; transition: all 0.2s ease;">
-            <div class="d-flex justify-content-between align-items-start">
-                <div class="flex-grow-1">
-                    <div class="d-flex align-items-center mb-1">
-                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-2 py-1 small me-2">
-                            ${item.category}
-                        </span>
-                        ${item.date ? `<small class="text-muted">${item.date}</small>` : ''}
-                    </div>
-                    <h6 class="mb-1 text-primary search-title" style="line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                        ${truncateText(item.title, 2)}
-                    </h6>
-                    <p class="mb-0 text-muted small search-subtitle" style="line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                        ${truncateText(item.subtitle, 2)}
-                    </p>
-                </div>
-                <i class="bi bi-arrow-right text-primary ms-2" style="flex-shrink: 0;"></i>
-            </div>
+  if (!pfReady) {
+    resultsEl.innerHTML = `
+      <div class="text-center py-4">
+        <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+        <div class="mt-2 text-secondary">Loading search…</div>
+      </div>`;
+    await ensurePagefind();
+  }
+
+  const search = await pf.debouncedSearch(q, {}, 300);
+  if (search === null) return;
+
+  const top = await Promise.all(search.results.slice(0, 10).map(r => r.data()));
+  if (!top.length) {
+    resultsEl.innerHTML = `
+      <div class="alert alert-warning mb-0" role="alert">
+        No results for "<strong>${esc(q)}</strong>"
+      </div>`;
+    return;
+  }
+
+  let html = '<div class="list-group">';
+  for (const r of top) {
+    const url   = r.url;
+    const title = r.meta?.title ? esc(r.meta.title) : 'Untitled';
+    const desc  = r.meta?.description || '';
+    const tags  = extractTags(r.meta, r.filters);
+    const previewImg = r.meta?.preview_image || null;
+    const preview = esc(truncate(desc || r.excerpt?.replace(/<[^>]*>/g, '') || '', 140));
+
+    // badges: prefer all tags; if none, omit badge
+    const badges = tags.length
+      ? tags.map(t => `<span class="badge rounded-pill text-bg-primary me-2 mb-2">${esc(t)}</span>`).join('')
+      : '';
+
+    // right-side column: thumbnail (bigger on mobile), plus arrow
+    const imgHTMLRight = previewImg ? `
+      <div class="d-flex flex-column align-items-end ms-3">
+        <!-- Mobile: a little larger now -->
+        <img src="${esc(previewImg)}" alt="${title}"
+            class="img-fluid rounded-3 d-sm-none"
+            style="width:120px;height:auto;">
+        <!-- sm+: slightly bigger -->
+        <img src="${esc(previewImg)}" alt="${title}"
+            class="img-fluid rounded-3 d-none d-sm-block"
+            style="width:160px;height:auto;">
+        <i class="bi bi-arrow-right fs-4 text-primary mt-2 d-none d-sm-block"></i>
+      </div>
+      ` : `
+        <!-- No image? keep the arrow on the right for sm+ -->
+        <div class="text-primary d-none d-sm-flex align-items-center ms-3">
+          <i class="bi bi-arrow-right fs-4"></i>
         </div>
-    `).join('');
+      `;
+
+    html += `
+      <a href="${url}" class="list-group-item list-group-item-action bg-body-tertiary border-0 shadow-sm rounded-3 p-3 mb-3">
+        <div class="d-flex align-items-start">
+          <div class="flex-grow-1 pe-2">
+            <div class="mb-2 d-flex flex-wrap align-items-center">${badges}</div>
+            <h6 class="mb-1 text-primary">${title}</h6>
+            <p class="mb-0 small text-secondary">${preview}</p>
+          </div>
+          ${imgHTMLRight}
+        </div>
+      </a>`;
+
+  }
+  html += '</div>';
+  resultsEl.innerHTML = html;
 }
-
-function selectSearchResult(url) {
-    const modal = bootstrap.Modal.getInstance(document.getElementById('searchModal'));
-    modal.hide();
-    
-    // Navigate to the URL
-    if (url.startsWith('#')) {
-        // Scroll to anchor on current page
-        const element = document.querySelector(url);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    } else {
-        // Navigate to different page
-        window.location.href = url;
-    }
-}
-
-// Initialize search on modal show
-document.getElementById('searchModal').addEventListener('shown.bs.modal', function () {
-    document.getElementById('searchInput').focus();
-    if (!isSearchDataLoaded) {
-        document.getElementById('searchResults').innerHTML = `
-            <div class="text-center py-4">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <p class="text-muted mt-2">Loading search data...</p>
-            </div>`;
-    } else {
-        document.getElementById('searchResults').innerHTML = '<div class="text-muted text-center py-4"><i class="bi bi-search fs-1 d-block mb-3"></i>Start typing to search...</div>';
-    }
-});
-
-// Clear search when modal is hidden
-document.getElementById('searchModal').addEventListener('hidden.bs.modal', function () {
-    document.getElementById('searchInput').value = '';
-    if (isSearchDataLoaded) {
-        document.getElementById('searchResults').innerHTML = '';
-    }
-});
-
-// Preload search data when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Load search data in background after a short delay
-    setTimeout(loadSearchData, 2000);
-});

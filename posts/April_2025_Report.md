@@ -1,6 +1,7 @@
 ---
-title: April 2025 Report Linux Victoria 
-description: Read about the developments of Linux Victoria in April 2025
+title: April 2025 Report - Linux Victoria 
+description: Read about our developments, what's new this past month and what we have been working on.
+tags: ["Report", "2025"]
 ---
 
 

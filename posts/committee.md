@@ -1,3 +1,9 @@
+---
+title: Linux Victoria Committee
+description: View our current Linux Victoria Committee
+search: false
+---
+
 ## Linux Victoria Committee
 
 The Linux Victoria committee are a group of volunteer's who run the Monthly Meetings, the general LUV meetups and they provide the maintenance and upkeep of the Linux Victoria website. They are also passionate about open source technologies and contributing to growing the industry.
