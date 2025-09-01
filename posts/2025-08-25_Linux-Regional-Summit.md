@@ -1,49 +1,42 @@
 ---
 title: Details of Linux Regional Summit Gippsland 2025
 description: Find out more about travel facilites, the Linux Regional Discourse and joining online.
-preview_image: http://linuxvictoria.org/assets/images/Linux_Regional_Summit_2025.png
+preview_image: http://linuxvictoria.org/assets/images/l8-gippsland-2025/Linux_Regional_Summit_2025.png
 tags: ["L8", "2025"]
+gallery: /assets/images/l8-gippsland-2025/gallery
 ---
 
-<img src="/assets/images/Linux_Regional_Summit_2025_thumbnail.webp" alt="Linux Regional Summit Gippsland 2025" style="width: 100%;" class="rounded mt-3 d-block d-md-none" />
-<img src="/assets/images/Linux_Regional_Summit_2025_thumbnail.webp" alt="Linux Regional Discourse (Online) // Gippsland 2025 Summit" style="width: 50%;" class="rounded mt-3 d-none d-md-block" />
 
-
-## Linux Regional Summit 2025
+## Linux Regional Summit Gippsland 2025
 
 **Monday, August 25th, 2025**  
-**10:00 AM to 5:00 PM AEST**  
-**Gippsland Innovation Centre, Morwell, Victoria (Hybrid Event)**
+**Morwell Innovation Centre, Morwell, Victoria (Hybrid)**  
+  
+### Thank you to everyone that joined us in Gippsland!
 
-### Details
-You can now find the full program on <https://linuxvictoria.org/linux-regional-summit>
+What a special day filled with great conversations about the importance of open source in regional Australia. 
 
-<br>
-<a id="travel"></a>
+We’d like to give a heartfelt thank you to our incredible speakers and showcasers:
 
-### Travel Facilities
-Those who are interested in attending Linux Regional Summit in person, we have facilitated pick up from Morwell Station in two rounds and drop off at the end.
+- **Brock** delivered an informative, step-by-step demonstration of installing and using OpenSUSE, showing just how accessible Linux can be for newcomers and seasoned users alike.
+    
+- **Marty from Serversaurus** shared valuable insights on the importance and many benefits of Linux and open source software to business.
+    
+- **Andrew** joined us online to showcase how to locally use the open source LLM OLlama to code scripts and use for a variety task all on your own machine.
+    
+- **Kiki** also joined online to share a discussion on exploring how internet governance and open source principles build inclusive digital communities.
+    
 
-Leave Southern Cross station at 8:26am on Traralgon Line and get off at Morwell Station. Pick up at Morwell Station at 10:45pm
+We also extend our thanks to:
 
-Leave Southern Cross station with 11:23am Traralgon Service and get off at Morwell Station. Pick up from Morwell Station at 1:45pm.
+- **Serversaurus**  for their generous sponsorship
+    
+- **Morwell Innovation Centre**  for hosting us in such a fantastic venue
+    
+- **Cait from Gippsland Tech School**  for a fascinating tour showcasing the next generation of innovators in our region.
 
-Drop off to Morwell Station at 5:15pm for catching the 5:28pm service for arrival at Southern Cross at 7:48pm.
+As always, it was wonderful to meet newcomers and reconnect with familiar faces, many attending in person for the first time!
 
-<br>
-<a id="linux-regional-discourse"></a>
-
-### Linux Regional Discourse    
-Due to many requests for joining online, we have restructured the afternoon program into a hybrid session.
-
-The session will run from 2pm to 4pm and will be available to join online.
-
-To stay tuned sign up on meetup <https://www.meetup.com/linux-users-of-victoria/events/310676900/>
+We look forward to welcoming you back next year as we celebrate Linux’s landmark **35th Birthday** 🐧
 
 
-<br>
-<a id="subscribe"></a>
-
-### Stay Tuned
-
-To receive updates about the development of this topic register your interest on [https://linuxvictoria.org/engage/](https://linuxvictoria.org/engage/?supportAreas=Linux%20Regional%20Summit)

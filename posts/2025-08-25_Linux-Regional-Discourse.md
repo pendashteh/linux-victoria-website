@@ -1,11 +1,11 @@
 ---
 title: Linux Regional Discourse (Online) Gippsland 2025 Summit
 description: This is a hybrid part of the Linux Regional Gippsland 2025 Summit that happens in person in Morwell, VIC.
-preview_image: "http://linuxvictoria.org/assets/images/Linux_Regional_Discourse_2025.png"
+preview_image: "http://linuxvictoria.org/assets/images/l8-gippsland-2025/Linux_Regional_Discourse_2025.png"
 ---
 
-<img src="/assets/images/Linux_Regional_Discourse_2025.webp" alt="Linux Regional Discourse (Online) // Gippsland 2025 Summit" style="width: 100%;" class="rounded mt-3 d-block d-md-none" />
-<img src="/assets/images/Linux_Regional_Discourse_2025.webp" alt="Linux Regional Discourse (Online) // Gippsland 2025 Summit" style="width: 50%;" class="rounded mt-3 d-none d-md-block" />
+<img src="/assets/images/l8-gippsland-2025/Linux_Regional_Discourse_2025.webp" alt="Linux Regional Discourse (Online) // Gippsland 2025 Summit" style="width: 100%;" class="rounded mt-3 d-block d-md-none" />
+<img src="/assets/images/l8-gippsland-2025/Linux_Regional_Discourse_2025.webp" alt="Linux Regional Discourse (Online) // Gippsland 2025 Summit" style="width: 50%;" class="rounded mt-3 d-none d-md-block" />
 
 # Linux Regional Discourse (Online) // Gippsland 2025 Summit
 
