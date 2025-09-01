@@ -1,6 +1,6 @@
 ## Linux Victoria - Town Hall Meeting September
 
-Tuesday, September 2nd, 2025 
+Tuesday, September 9th, 2025 
 7:00 PM to 9:00 PM AEST
 
 ## Details
@@ -25,7 +25,7 @@ We use a self-hosted BBB instance for this meeting.
 
 ## Date
 
-**Tuesday, September 2nd, 2025**  
+**Tuesday, September 9th, 2025**  
 **7:00 PM to 9:00 PM AEST**
 
 ## Schedule
