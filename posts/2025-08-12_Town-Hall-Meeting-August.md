@@ -1,3 +1,9 @@
+---
+title: August Town Hall Meeting - Linux Victoria
+description: Join us for Linux Victoria's monthly town hall meeting. In the August town hall we are discussing the Linux and AI Event Collaboration with MLAI Melbourne, Linux Regional Summit in Gippsland, Linux Birthday Celebrations, Software Freedom Day Community Partnership, Installfests planning in Ballarat, Internet Governance Forum community reach
+tags: ["Event", "Town Hall", "2025"]
+---
+
 ## Linux Victoria - Town Hall Meeting August
 
 Tuesday, August 12th, 2025 

@@ -1,6 +1,12 @@
+---
+title: July Town Hall Meeting - Linux Victoria
+description: Join us for Linux Victoria's monthly town hall meeting. In the July town hall we are discussing Planning for Q1, 2026 (July - Sep), Review of financial year 2025-2026, Planning of Linux Regional Summit, Planning for Software Freedom Day, Updates on Certification, Formation of teams for delivery, Managing infrastruture, New members and partners
+tags: ["Event", "Town Hall", "2025"]
+---
+
 ## Linux Victoria - Town Hall Meeting July
 
-Tuesday, June 1st, 2025
+Tuesday, July 1st, 2025
 7:00 PM to 9:00 PM AEST
 
 ## Details

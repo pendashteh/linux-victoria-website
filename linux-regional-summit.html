@@ -9,10 +9,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
   <link href="/assets/style.css" rel="stylesheet">
   <link rel="icon" href="/assets/favicon_lv.ico" type="image/x-icon">
-  <meta property="og:image" content="https://linuxvictoria.org/assets/images/Linux_Regional_Summit_2025_thumbnail.webp">
+  <meta property="og:image" content="https://linuxvictoria.org/assets/images/l8-gippsland-2025/Linux_Regional_Summit_2025_thumbnail.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image"
-    content="https://linuxvictoria.org/assets/images/Linux_Regional_Summit_2025_thumbnail.webp">
+    content="https://linuxvictoria.org/assets/images/l8-gippsland-2025/Linux_Regional_Summit_2025_thumbnail.webp">
   <style>
     :root {
       --bs-primary: #803d99 !important;
@@ -272,19 +272,43 @@
       font-size: 0.6rem;
       margin-right: 0.2rem;
     }
+
+    /* See you next year banner styling */
+    .next-year-banner {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      animation: gentle-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes gentle-pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.9;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-light">
   <div class="container-fluid px-0">
+    <!-- See You Next Year Banner -->
+    <div class="next-year-banner">
+      👋 See you next year!
+    </div>
     <!-- Hero Section -->
     <div class="bg-primary text-white py-5">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-10">
-            <h1 class="display-2 fw-bold mb-3">Linux Regional Summit</h1>
-            <h2 class="display-5 fw-bold mb-3">Gippsland 2025</h1>
-              <p class="lead fs-3 mb-3">Celebrating Open Source in Regional Victoria</p>
+            <h1 class=" fw-bold mb-3">Linux Regional Summit</h1>
+            <h2 class=" fw-bold mb-3">Gippsland 2025</h1>
+              <p class="lead fs-5 mb-3">Celebrating Open Source in Regional Victoria</p>
               <div class="birthday-badge">
                 <span class="badge bg-warning text-dark fs-5 px-4 py-2 rounded-pill text-wrap">
                   🎉 Linux's 34th Birthday Celebration
@@ -374,7 +398,7 @@
 
                   <!-- Register for Summit -->
                   <div class="d-grid mt-4">
-                    <a href="#register" class="btn register-btn btn-lg w-100" aria-label="Register for Summit">
+                    <a href="#register" class="btn register-btn btn-lg w-100 disabled" aria-label="Register for Summit">
                       <span class="register-btn-text">
                         <i class="bi bi-check2-circle me-2"></i>Register for Summit
                       </span>
@@ -397,7 +421,7 @@
 
                   <!-- Register for Summit -->
                   <div class="d-grid mt-4">
-                    <a href="https://electronworkshop.com.au/goto/venue/" class="btn register-btn w-100" aria-label="Register for Online Access">
+                    <a href="https://electronworkshop.com.au/goto/venue/" class="btn register-btn w-100 disabled" aria-label="Register for Online Access">
                       <span class="register-btn-text">
                         <i class="bi bi-laptop me-2"></i>Register for Online Access
                       </span>
@@ -660,15 +684,6 @@
                       <h4 class="fw-bold text-primary mb-4">Principle Sponsor and Host</h4>
                       <div class="sponsor-logo-container">
                         <img src="/assets/images/lrs_2025_logos/MIC-blue-x2.png" alt="Morwell Innovation Centre Logo"
-                          class="sponsor-logo">
-                      </div>
-                    </div>
-
-                    <!-- Community Partner -->
-                    <div class="col-12 mt-5">
-                      <h4 class="fw-bold text-primary mb-4">Community Partner</h4>
-                      <div class="sponsor-logo-container">
-                        <img src="/assets/images/lrs_2025_logos/banner.jpg" alt="Computerbank Victoria Logo"
                           class="sponsor-logo">
                       </div>
                     </div>

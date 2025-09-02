@@ -3,131 +3,283 @@ title: "Linux Victoria"
 layout: layout.html
 ---
 
-<section class="bg-body mt-5">
-    <div class="container">
+<section class="bg-body mt-3 mt-md-5">
+    <div class="container-fluid px-0">
 
+        <!-- Filter upcoming events -->
+        {% assign upcomingCards = "" | split: "" %}
+        {% assign currentTimestamp = "now" | date: "%s" %}
+
+        {% for card in homeCards %}
+        {% unless card.past == true %}
+        {% if card.date == nil or card.date contains "Date to be announced" or card.date contains "Tuesday Night
+        Discussions" %}
+        {% assign upcomingCards = upcomingCards | push: card %}
+        {% else %}
+        {% assign cardTimestamp = card.date | date: "%s" %}
+        {% if cardTimestamp > currentTimestamp %}
+        {% assign upcomingCards = upcomingCards | push: card %}
+        {% endif %}
+        {% endif %}
+        {% endunless %}
+        {% endfor %}
+
+        <!-- Only show upcoming events section if there are upcoming events -->
+        {% if upcomingCards.size > 0 %}
         <!-- Upcoming Events -->
-        <section>
-            <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Linux Victoria Upcoming Events</h3>
+        <section class="container">
+            <!-- <h3 class="text-primary fw-semibold text-center text-lg-start mb-4">Welcome to Linux Victoria</h3> -->
 
             <div class="row row-gap-3">
-                {% for event in config.eventCards %}
+                {% for card in upcomingCards %}
                 <div class="col-12 col-lg-6 pb-4">
-                    <div class="card rounded-3 text-primary h-100
-      {% if event.title and event.title contains 'Regional Summit' %}
-        border border-3 border-primary shadow-lg position-relative
-      {% else %}
-        bg-body-tertiary shadow-sm border-0
-      {% endif %}">
-
-                        <div class="row g-0 flex-column flex-md-row h-100">
+                    <article
+                        class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 overflow-hidden position-relative">
+                        <div class="row g-0 flex-column flex-md-row">
                             <div class="col-md-7">
-                                <div class="card-body">
-                                    <h5
-                                        class="card-title {% if event.title and event.title contains 'Regional Summit' %}fw-bold text-uppercase{% endif %}">
-                                        {{ event.title }}
-                                    </h5>
+                                <div class="card-body d-flex flex-column">
+                                    <!-- Title -->
+                                    <h5 class="card-title text-dark mb-3 lh-base">{{ card.title }}</h5>
 
-                                    {% if event.weekday %}
-                                    <p class="card-text mb-0">
-                                        {{ "now" | nextWeekday: event.weekday | date: "%A, %B %e, %Y" }}
-                                    </p>
-                                    {% elsif event.date contains "Date to be announced" %}
-                                    <p class="card-text mb-0">Date to be announced</p>
-                                    {% elsif event.date %}
-                                    <p class="card-text mb-0">{{ event.date }}</p>
+                                    <!-- Meta Information -->
+                                    <div class="text-muted small">
+                                        {% assign formattedDate = card.date | formatDate %}
+                                        {% if formattedDate and formattedDate != "" %}
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span>{{ formattedDate }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if card.time %}
+                                        <div class="d-flex align-items-center mb-1">
+                                            <span>{{ card.time }}</span>
+                                        </div>
+                                        {% endif %}
+                                        <div class="d-flex align-items-center">
+                                            <span>{{ card.location }}</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Spacer to push button to bottom -->
+                                    <div class="flex-grow-1"></div>
+
+                                    <!-- Action Button -->
+                                    {% if card.cta == "" %}
+                                    <!-- No button shown for empty CTA -->
+                                    {% else %}
+                                    <div class="mt-3">
+                                        <a class="btn btn-primary btn-sm stretched-link" href="{{ card.link }}">
+                                            {% if card.cta %}{{ card.cta }}{% else %}Read Details{% endif %}
+                                        </a>
+                                    </div>
                                     {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-5 d-flex align-items-center justify-content-center p-2">
+                                <img src="{{ card.image }}" class="img-fluid rounded" alt="{{ card.title }}">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
 
-                                    {% if event.time %}
-                                    <p class="card-text mb-0">{{ event.time }}</p>
+        </section>
+
+        <br>
+        <br>
+        {% endif %}
+
+        <!-- Filter past events (limit to 3 for home page) -->
+        {% assign pastCards = "" | split: "" %}
+        {% assign pastCardCount = 0 %}
+
+        {% for card in homeCards %}
+        {% if pastCardCount < 3 %} {% if card.past==true %} {% assign pastCards=pastCards | push: card %} {% assign
+            pastCardCount=pastCardCount | plus: 1 %} {% elsif card.date !=nil and card.date !="Date to be announced" and
+            card.date !="Linux & AI Tuesday Night
+        Discussions" %} {% assign cardTimestamp=card.date | date: "%s" %} {% if cardTimestamp <=currentTimestamp %} {%
+            assign pastCards=pastCards | push: card %} {% assign pastCardCount=pastCardCount | plus: 1 %} {% endif %} {%
+            endif %} {% endif %} {% endfor %} <!-- Only show previous events section if there are past events -->
+            {% if pastCards.size > 0 %}
+            <!-- Previous Events and Posts - Blog Style -->
+            <section class="container">
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+                    <h3 class="text-primary fw-semibold text-center text-lg-start mb-2 mb-md-0">Recent Events and Posts
+                    </h3>
+                    <a href="/events-and-posts"
+                        class="btn btn-outline-primary btn-sm align-self-start align-self-md-auto">
+                        <i class="bi bi-arrow-right me-2"></i>View All Events & Posts
+                    </a>
+                </div>
+
+                <div class="row row-gap-4">
+                    {% for card in pastCards %}
+                    <div class="col-12 col-md-4 pb-3">
+                        <article
+                            class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 h-100 overflow-hidden">
+                            <!-- Featured Image -->
+                            <div class="card-img-top overflow-hidden" style="height: 200px;">
+                                <img src="{{ card.image }}" class="img-fluid w-100 h-100 object-fit-cover"
+                                    alt="{{ card.alt }}" style="transition: transform 0.3s ease;">
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="card-body d-flex flex-column">
+                                <!-- Date Badge -->
+                                <div class="mb-2">
+                                    {% assign formattedDateBadge = card.date | formatDate: "MMM Do, YYYY" %}
+                                    {% if formattedDateBadge and formattedDateBadge != "" %}
+                                    <span
+                                        class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 small">
+                                        {{ formattedDateBadge }}
+                                    </span>
                                     {% endif %}
+                                </div>
 
-                                    <p class="card-text">Location: {{ event.location }}</p>
+                                <!-- Title -->
+                                <h5 class="card-title text-dark mb-3 lh-base">{{ card.title }}</h5>
 
-                                    <a class="btn btn-primary stretched-link" href="{{ event.link }}">
-                                        Read Details
+                                <!-- Meta Information -->
+                                <div class="text-muted small mb-3">
+                                    {% if card.time %}
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="bi bi-clock me-2"></i>
+                                        <span>{{ card.time }}</span>
+                                    </div>
+                                    {% endif %}
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt me-2"></i>
+                                        <span>{{ card.location }}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Spacer to push button to bottom -->
+                                <div class="flex-grow-1"></div>
+
+                                <!-- Action Button -->
+                                {% if card.cta == "" %}
+                                <!-- No button shown for empty CTA -->
+                                {% else %}
+                                <div class="mt-3">
+                                    <a class="btn btn-outline-primary btn-sm w-100" href="{{ card.link }}">
+                                        <i class="bi bi-arrow-right me-2"></i>
+                                        {% if card.cta %}{{ card.cta }}{% else %}Read More{% endif %}
                                     </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Show more indicator if there are more than 3 past events -->
+                {% assign totalPastCards = 0 %}
+                {% for card in homeCards %}
+                {% if card.past == true %}
+                {% assign totalPastCards = totalPastCards | plus: 1 %}
+                {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday
+                Night Discussions" %}
+                {% assign cardTimestamp = card.date | date: "%s" %}
+                {% if cardTimestamp <= currentTimestamp %} {% assign totalPastCards=totalPastCards | plus: 1 %} {% endif
+                    %} {% endif %} {% endfor %} {% if totalPastCards> 3 %}
+                    <div class="text-center mt-4">
+                        <p class="text-muted mb-3">Showing {{ pastCards.size }} of {{ totalPastCards }} posts</p>
+                        <a href="/events-and-posts" class="btn btn-outline-primary">
+                            <i class="bi bi-arrow-right me-2"></i>View All Events & Posts
+                        </a>
+                    </div>
+                    {% endif %}
+
+            </section>
+            {% endif %}
+
+            <!-- Transition Divider Top -->
+            <div class="section-divider section-divider-top">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-100" style="display: block;">
+                    <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#753f98"></path>
+                </svg>
+            </div>
+
+            <!-- Ways to Engage -->
+            <div class="bg-primary">
+                <section class="py-5 container">
+                    <div class="mx-3">
+                        <h3 class="text-light fw-semibold mb-4 text-uppercase text-center">Ways to Engage </h3>
+                        <br>
+
+                        <!-- Newsletter -->
+                        <div class="d-grid gap-5 mb-5">
+
+                            <div class="row">
+                                <div
+                                    class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 pb-0 shadow">
+                                    <h2 class="mb-0 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
+                                    <script type="text/javascript"
+                                        src="//mautic.linuxvictoria.org/form/generate.js?id=1"></script>
                                 </div>
                             </div>
 
-                            <div
-                                class="col-md-5 d-flex align-items-center justify-content-center {% if event.title and event.title contains 'Regional Summit' %}p-2{% endif %}">
-                                <img src="{{ event.image }}"
-                                    class="img-fluid rounded {% if event.title and event.title contains 'Regional Summit' %}shadow{% endif %}"
-                                    alt="{{ event.alt }}">
+                            <!-- Volunteer Call -->
+                            <div class="row">
+                                <div
+                                    class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 shadow">
+                                    <p class="fs-5">
+                                        Linux Victoria is a team effort, we actively look for new ideas, ways to connect
+                                        to other organisations and help in running current activities.
+                                    </p>
+                                    <p class="fs-5">
+                                        Stay tuned and reach out if we could help or if you have an offer for the group.
+                                    </p>
+                                    <div>
+                                        <a href="/engage" class="btn btn-outline-primary">Engage or Volunteer</a>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- Join LUV / Mailing List -->
+                            <div class="row">
+                                <div
+                                    class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 shadow">
+                                    <h3 class="text-primary fw-semibold">Chat in LUV's Mailing Lists</h3>
+                                    <a
+                                        href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/">
+                                        Subscribe to LUV's announce mailing list.
+                                    </a>
+                                    <p class="mb-0">We'll send you a confirmation email in reply.</p>
+                                    <p class="mb-0">Come back, enter the confirmation password, and you're done!</p>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
-                </div>
-                {% endfor %}
+                </section>
             </div>
 
-        </section>
 
-        <!-- Ways to Engage -->
-        <section class="py-5">
-            <div class="mx-3">
-                <h3 class="text-primary fw-semibold mb-4 text-uppercase text-center">Ways to Engage </h3>
-                <br>
-                <!-- Newsletter -->
-                <div class="row">
-                    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4 pb-0">
-                        <h2 class="mb-0 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
-                        <script type="text/javascript" src="//mautic.linuxvictoria.org/form/generate.js?id=1"></script>
-                    </div>
-                </div>
 
-                <br>
-
-                <!-- Volunteer Call -->
-                <div class="row">
-                    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4">
-                        <h3 class="text-primary fw-semibold">Get Involved!</h3>
-                        <h4 class="text-primary fw-semibold fs-5">Linux Victoria is currently looking for volunteers.
-                        </h4>
-                        <p>
-                            If you are interested in helping out, please fill in our
-                            <a href="/volunteer-form">Volunteer Form</a>
-                        </p>
-                        <div>
-                            <a href="/volunteer-form" class="btn btn-outline-primary">Volunteer Form</a>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
-                <!-- Join LUV / Mailing List -->
-                <div class="row">
-                    <div class="text-primary text-center col-12 offset-md-1 col-md-10 bg-light rounded-3 p-4">
-                        <h3 class="text-primary fw-semibold">Chat in LUV's Mailing Lists</h3>
-                        <a href="https://lists.luv.asn.au/mailman3/postorius/lists/luv-announce.luv.asn.au/">Subscribe
-                            to
-                            LUV's
-                            announce mailing list.</a>
-                        <p class="mb-0">We'll send you a confirmation email in reply.</p>
-                        <p class="mb-0">Come back, enter the confirmation password, and you're done!</p>
-                    </div>
-                </div>
-
-                <div class="mb-5 text-center text-lg-start">
-                </div>
-
+            <!-- Transition Divider Top -->
+            <div class="section-divider section-divider-bottom">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-100" style="display: block;">
+                    <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#753f98"></path>
+                </svg>
             </div>
-        </section>
 
 
-        <!-- Useful Links -->
-        <div class="mb-5">
-            <h3 class="text-primary fw-semibold mb-4 text-center text-lg-start">Useful Links</h3>
-            <div class="row row-gap-2">
-                {% for link in config.usefulLinks %}
-                <a href="{{ link.link }}" target="_blank" class="col-12 text-decoration-none">
-                    <h4 class="text-dark border-start border-primary border-5 ps-2">{{ link.title }}</h4>
-                </a>
-                {% endfor %}
+            <!-- Useful Links -->
+            <div class="mb-5 container">
+                <h3 class="text-primary fw-semibold mb-4 text-center text-lg-start">Useful Links</h3>
+                <div class="row row-gap-2">
+                    {% for link in usefulLinks %}
+                    <a href="{{ link.link }}" target="_blank"
+                        class="hover-primary col-12 text-decoration-none h4 text-dark border-start border-primary border-5 ms-2 mb-0">
+                        {{ link.title }}
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
     </div>
 
