@@ -3,7 +3,6 @@ title: Details of Linux Regional Summit Gippsland 2025
 description: Find out more about travel facilites, the Linux Regional Discourse and joining online.
 preview_image: http://linuxvictoria.org/assets/images/l8-gippsland-2025/Linux_Regional_Summit_2025.png
 tags: ["L8", "2025"]
-gallery: /assets/images/l8-gippsland-2025/gallery
 ---
 
 
