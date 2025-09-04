@@ -1,6 +1,6 @@
 ---
 title: "Introducing LAIT Night Chats: Linux and AI Tuesday Conversations"
-date: 2025-09-02
+date: 2025-09-09
 tags: ["Upcoming", "AI"]
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
 preview_image: "http://linuxvictoria.org/assets/images/LAIT_night_banner.png"
@@ -14,9 +14,9 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 ## 🗓️ Next Event
 
-**LAIT Night Chat No. 9**
+**LAIT Night Chat No. 10**
 
-**Date:** Tuesday, September 2, 2025
+**Date:** Tuesday, September 9, 2025
 
 **Time:** 9:00 PM (AEST)
 
