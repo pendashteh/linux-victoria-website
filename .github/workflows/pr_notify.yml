@@ -6,7 +6,7 @@ on:
   issues:
     types: [opened, closed]
   issue_comment:
-    types: [created]
+    types: [created, edited]   # <- include edited so we can act only on edited Netlify comments
 
 jobs:
   notify:
@@ -67,8 +67,30 @@ jobs:
             echo "Comment URL: $COMMENT_URL"
             echo "Comment Body: $COMMENT_BODY"
 
-            SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 200)
-            TEXT="💬 *New Comment* by $COMMENT_AUTHOR on an issue:%0A${SHORT_BODY}%0ALink: $COMMENT_URL"
+            # Special handling for Netlify bot comments
+            if [ "$COMMENT_AUTHOR" = "netlify[bot]" ]; then
+              echo "🤖 Detected Netlify bot comment"
+              if [ "$ACTION" != "edited" ]; then
+                echo "⏭️ Netlify comment is not edited yet — skipping Telegram notification."
+                exit 0
+              fi
+
+              # Only notify if the edited body contains EXACT 'Deploy Preview'
+              if echo "$COMMENT_BODY" | grep -q 'Deploy Preview'; then
+                # Optional: try to extract first URL, fallback to the comment URL
+                PREVIEW_URL=$(echo "$COMMENT_BODY" | grep -Eo 'https?://[^ )]+' | head -n1)
+                TEXT="🚀 *Netlify Deploy Preview*%0ALink: ${PREVIEW_URL:-$COMMENT_URL}"
+                echo "✅ Netlify edited comment contains 'Deploy Preview' — will send."
+              else
+                echo "⏭️ Edited Netlify comment does not contain 'Deploy Preview' — skipping."
+                exit 0
+              fi
+
+            else
+              # Non-Netlify comments: always send
+              SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 200)
+              TEXT="💬 *New Comment* by $COMMENT_AUTHOR on an issue:%0A${SHORT_BODY}%0ALink: $COMMENT_URL"
+            fi
 
           else
             echo "⚠️ Unsupported event: $EVENT_NAME"
