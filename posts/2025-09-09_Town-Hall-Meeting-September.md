@@ -21,7 +21,12 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 
 ## Key Discussion Points
 
-- TBC
+- Linux Regional Summit debrief and future plans
+- Linux & AI workshops update
+- Installfest planning
+- PyCon AU
+- Software Freedom Day preparation
+- Internet Governance Forum in Adelaide
 
 ## How To Join
 
