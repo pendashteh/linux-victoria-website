@@ -1,6 +1,6 @@
 ---
 title: "Introducing LAIT Night Chats: Linux and AI Tuesday Conversations"
-date: 2025-09-09
+date: 2025-09-16
 tags: ["Upcoming", "AI"]
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
 preview_image: "http://linuxvictoria.org/assets/images/LAIT_night_banner.png"
@@ -16,13 +16,15 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 **LAIT Night Chat No. 10**
 
-**Date:** Tuesday, September 9, 2025
+**Date:** Tuesday, September 16, 2025
 
 **Time:** 9:00 PM (AEST)
 
 **Location:** Online at [Electron Workshop eVenue](https://electronworkshop.com.au/goto/venue/)
 
-**RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/310499427/?ref=linuxvictoria.org)
+
+
+**RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/310658646/?ref=linuxvictoria.org)
 
 
 ## What Are LAIT Night Chats?
@@ -73,7 +75,7 @@ LAIT Night Chats work best when the community actively participates. Beyond atte
 
 ## Questions?
 
-Curious about whether LAIT Night Chats are right for you? Want to propose a topic or get involved in organizing? Reach out to [contact information] or drop a message in our community chat.
+Curious about whether LAIT Night Chats are right for you? Want to propose a topic or get involved in organizing? [Reach out](/contact) or drop a message in our community chat.
 
 We're building something together - a space where the practical meets the experimental, where individual knowledge becomes collective wisdom, and where the powerful combination of Linux and AI gets explored by people who love both.
 
