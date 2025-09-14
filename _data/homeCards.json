@@ -1,8 +1,18 @@
 [
   {
+    "title": "Software Freedom Day",
+    "date": "2025-09-20",
+    "time": "12PM - 3PM AEST",
+    "location": "In-Person: MelbPC Office, Moorabbin \n Online: Electron Workshop eVenue",
+    "link": "https://sfd.org.au/",
+    "join_link": "https://sfd.org.au",
+    "image": "/assets/images/SFD-2025.webp",
+    "cta": "Register"
+  },
+  {
     "title": "LAIT Night Chats",
     "date": "Tuesday Night Discussions",
-    "time": "21:00 – 22:00 AEST",
+    "time": "21:00 - 22:00 AEST",
     "location": "Electron Workshop eVenue",
     "link": "/posts/lait-night-chat-linux-and-ai",
     "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",

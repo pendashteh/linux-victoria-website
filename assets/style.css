@@ -259,3 +259,6 @@ img[alt="LUV Logo"] {
     width: 2rem;
     height: 2rem;
 }
+
+
+.multiline { white-space: pre-line; }
