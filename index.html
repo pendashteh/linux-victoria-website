@@ -88,7 +88,7 @@ layout: layout.html
                     {% else %}
                       {% if card.link %}
                         <div class="mt-3 d-flex flex-wrap gap-2">
-                          <a class="btn btn-primary btn-sm" href="{{ card.link }}">{{ card.cta | default: 'Read More' }}</a>
+                          <a class="btn btn-primary btn-sm stretched-link" href="{{ card.link }}">{{ card.cta | default: 'Read More' }}</a>
                         </div>
                       {% endif %}
                     {% endif %}
