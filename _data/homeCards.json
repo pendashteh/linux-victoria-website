@@ -4,10 +4,20 @@
     "date": "2025-09-20",
     "time": "12PM - 3PM AEST",
     "location": "In-Person: MelbPC Office, Moorabbin \n Online: Electron Workshop eVenue",
-    "link": "https://sfd.org.au/",
-    "join_link": "https://sfd.org.au",
     "image": "/assets/images/SFD-2025.webp",
-    "cta": "Register"
+    "featured": true,
+    "ctas": [
+      {
+        "label": "Register",
+        "href": "https://sfd.org.au/",
+        "type": "primary"
+      },
+      {
+        "label": "Submit Lightning Talk",
+        "href": "https://sfd.org.au/#lightning",
+        "type": "outline-primary"
+      }
+    ]
   },
   {
     "title": "LAIT Night Chats",
@@ -17,8 +27,7 @@
     "link": "/posts/lait-night-chat-linux-and-ai",
     "join_link": "https://venue.electronworkshop.com.au/r/linux-victoria",
     "image": "/assets/images/LAIT_night_banner.webp",
-    "past": false,
-    "cta": "Find Out More"
+    "past": false
   },
   {
     "title": "Town Hall Meeting - September",
