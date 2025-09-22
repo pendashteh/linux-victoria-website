@@ -180,7 +180,7 @@ layout: layout.html
                 {% else %}
                   {% if card.link %}
                     <div class="mt-3 d-flex flex-column gap-2">
-                      <a class="btn btn-outline-primary btn-sm w-100" href="{{ card.link }}">
+                      <a class="btn btn-outline-primary btn-sm w-100 stretched-link" href="{{ card.link }}">
                         <i class="bi bi-arrow-right me-2"></i>{{ card.cta | default: 'Read More' }}
                       </a>
                     </div>

@@ -4,20 +4,7 @@
     "date": "2025-09-20",
     "time": "12PM - 3PM AEST",
     "location": "In-Person: MelbPC Office, Moorabbin \n Online: Electron Workshop eVenue",
-    "image": "/assets/images/SFD-2025.webp",
-    "featured": true,
-    "ctas": [
-      {
-        "label": "Register",
-        "href": "https://sfd.org.au/",
-        "type": "primary"
-      },
-      {
-        "label": "Submit Lightning Talk",
-        "href": "https://sfd.org.au/#lightning",
-        "type": "outline-primary"
-      }
-    ]
+    "image": "/assets/images/SFD-2025.webp"
   },
   {
     "title": "LAIT Night Chats",
