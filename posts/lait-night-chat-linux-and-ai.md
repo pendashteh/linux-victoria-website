@@ -16,15 +16,15 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 
 **LAIT Night Chat No. 12**
 
-**Date:** Tuesday, September 23, 2025
+**Date:** Tuesday, October 1, 2025
 
-**Time:** 9:00 PM (AEST)
+**Time:** 9:00 PM (AEST), Omicron O'clock
 
 **Location:** Online at [Electron Workshop eVenue](https://electronworkshop.com.au/goto/venue/)
 
 
 
-**RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/310848589/?ref=linuxvictoria.org)
+**RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/fghgstyhcnbkb/?ref=linuxvictoria.org)
 
 
 ## What Are LAIT Night Chats?
