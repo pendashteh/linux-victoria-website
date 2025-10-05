@@ -1,26 +1,89 @@
+<!-- posts_layout -->
 {% include '_head.html' %}
-    
+
 {% include '_navbar.html' %}
 
+<main data-pagefind-ignore>
 
-<main>
+    <style>
+        h1 {
+            margin-top: 3rem;
+        }
 
-        <style>
-            h1 { margin-top: 3rem; }
-            h2 { margin-top: 2.5rem; }
-            h3 { margin-top: 0.8rem; }
-        </style>
-        <section class="bg-body mt-5">
-            <div class="container">
-                <div class="">
-                    {{ content }}
+        h2 {
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            margin-top: 0.8rem;
+        }
+    </style>
+
+    <section class="bg-body mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <div class="card">
+
+                        <div class="card-img-top overflow-hidden" style="height: 100%;">
+                            <img src="{{ image }}" class="img-fluid w-100 h-100 object-fit-cover" alt="{{ alt }}"
+                                style="transition: transform 0.3s ease;">
+                        </div>
+
+                        <div class="card-body border-primary px-4 px-md-5 pt-2 pb-4 rounded-3 shadow">
+                            {{ content }}
+
+                            <div class="mt-3">
+                                <a class="btn btn-outline-primary" href="/assets/events/Linux-Victoria-Town-Hall.ics"
+                                    download>
+                                    Add to Calendar (download .ics)
+                                </a>
+                                <a class="btn btn-outline-primary me-2"
+                                    href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NG8ybzJ0aDlvOW9iajNycHVqMXI3c25zM2cgOWtxZWQ3cWMyczVrYjE5ZWtpcHRsOHZuMDhAZw&tmsrc=9kqed7qc2s5kb19ekiptl8vn08%40group.calendar.google.com"
+                                    target="_blank" rel="noopener">
+                                    Add to Google Calendar
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </section>
-        <div class="container text-center mt-5">
-            <a href="/index" >Back to Home</a>
         </div>
-    
+    </section>
+
+
+    <div class="container text-center mt-5">
+        <a href="/">Back to Home</a>
+    </div>
+
 </main>
+
+{% if search != false %}
+<!-- Indexed by Pagefind -->
+<div data-pagefind-body class="visually-hidden" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+    <h1 data-pagefind-meta="title">{{ title }}</h1>
+    <p data-pagefind-meta="description">
+        {% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}
+    </p>
+</div>
+
+{% if tags and tags.length %}
+<ul class="visually-hidden" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+    {% for t in tags %}
+    <li data-pagefind-meta="tags">{{ t }}</li>
+    <li data-pagefind-filter="tags">{{ t }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% if preview_image %}
+
+<div class="visually-hidden" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+    <span data-pagefind-meta="preview_image">{{ preview_image }}</span>
+</div>
+{% endif %}
+
+{% endif %}
 
 {% include '_footer.html' %}
