@@ -31,7 +31,7 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 ## How To Join
 
 Link to join:  
-[https://venue.electronworkshop.com.au/r/linux-victoria](https://venue.electronworkshop.com.au/r/linux-victoria)  
+[https://electronworkshop.com.au/goto/venue](https://electronworkshop.com.au/goto/venue)  
 We use a self-hosted BBB instance for this meeting.
 
 ## Date
