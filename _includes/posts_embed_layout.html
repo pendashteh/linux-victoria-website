@@ -82,8 +82,54 @@
 <div class="visually-hidden" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
     <span data-pagefind-meta="preview_image">{{ preview_image }}</span>
 </div>
+
 {% endif %}
 
 {% endif %}
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const melbourneTimeZone = "Australia/Melbourne";
+  const eventStart = new Date("2025-10-14T19:00:00+11:00"); // AEDT
+  const eventEnd = new Date("2025-10-14T21:00:00+11:00");
+
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  if (userTimeZone === melbourneTimeZone) {
+    return; // no need to show local time if already Melbourne
+  }
+
+  const dateOptions = { 
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+    timeZone: userTimeZone
+  };
+  const timeOptions = { 
+    hour: 'numeric', minute: '2-digit', 
+    timeZoneName: 'short', timeZone: userTimeZone 
+  };
+
+  const localDate = new Intl.DateTimeFormat([], dateOptions).format(eventStart);
+  const localStartTime = new Intl.DateTimeFormat([], timeOptions).format(eventStart);
+  const localEndTime = new Intl.DateTimeFormat([], timeOptions).format(eventEnd);
+
+  const timeBlocks = document.querySelectorAll(".event-time");
+  timeBlocks.forEach(block => {
+    const localTimeEl = document.createElement("div");
+    localTimeEl.classList.add("local-event-time");
+    localTimeEl.innerHTML = `
+      <br>
+      <strong>Your local time:</strong><br>
+      ${localDate}<br>
+      ${localStartTime.replace(" ", " ")} to ${localEndTime.replace(" ", " ")} (${userTimeZone.replace("_", " ")})
+    `;
+    block.appendChild(localTimeEl);
+  });
+});
+</script>
+
+
+
+
 
 {% include '_footer.html' %}

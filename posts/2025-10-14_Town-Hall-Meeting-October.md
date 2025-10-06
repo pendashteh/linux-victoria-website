@@ -7,8 +7,10 @@ tags: ["Upcoming", "Event", "Town Hall", "2025"]
 ---
 
 ## Linux Town Hall
-Tuesday, October 14th, 2025 
-7:00 PM to 9:00 PM AEST
+<p class="event-time">
+  Tuesday, October 14th, 2025<br>
+  7:00 PM – 9:00 PM AEDT (Melbourne, Australia Time)
+</p>
 
 ## Details
 
@@ -35,14 +37,16 @@ Link to join:
 We use a self-hosted BBB instance for this meeting.
 
 ## Date
-
-**Tuesday, October 14th, 2025**  
-**7:00 PM to 9:00 PM AEST**
+<p class="event-time">
+  Tuesday, October 14th, 2025<br>
+  7:00 PM – 9:00 PM AEDT (Melbourne, Australia Time)
+</p>
 
 ## Schedule
 
 19:00 Meet and greet  
 19:30 Opening  
 20:00 Closure
+
 
 
