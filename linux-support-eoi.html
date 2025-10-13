@@ -54,28 +54,29 @@ tags: ["Volunteer"]
         You don’t have to submit this form to attend, but you’ll need to submit it to become part of the crew.
       </p>
 
-      <div class="text-center mb-4">
-        <button class="btn btn-outline-primary rounded-3 fw-semibold" type="button" id="toggleCalendarBtn">
-          <i class="bi bi-calendar-event me-2"></i>
-          View our information sessions
-        </button>
-      </div>
 
-      <div id="calendarContainer" class="collapse text-center">
+      <div id="" class="text-center">
         <p class="text-secondary small mb-3">
           These are the current information and onboarding session times. Booking is not essential,
           but recommended so we can accommodate everyone who joins.
         </p>
         <iframe
-          src="https://luma.com/embed/calendar/cal-wXbFCH0Z630C2sn/events?compact=true"
+          src="https://luma.com/embed/calendar/cal-wXbFCH0Z630C2sn/events"
           width="100%"
           height="450"
           frameborder="0"
-          style="border: 1px solid #bfcbda88; border-radius: 4px; max-width: 700px;"
+          style="max-width: 700px;"
           allowfullscreen=""
           aria-hidden="false"
           tabindex="0"
         ></iframe>
+
+      <div class="text-center mb-4">
+        <a href="https://luma.com/linux-volunteer?aff=linuxvictoria-eoi" class="btn btn-outline-primary rounded-3 fw-semibold" type="button" id="toggleCalendarBtn">
+          <i class="bi bi-calendar-event me-2"></i>
+          Go to Calendar Page
+        </a>
+      </div>
       </div>
     </div>
   </div>
@@ -118,14 +119,4 @@ tags: ["Volunteer"]
     setFieldFromParams('#supportExperience', ['supportExperience', 'support', 'previousExperience']);
   })();
 
-  // Toggle calendar visibility
-  document.getElementById('toggleCalendarBtn').addEventListener('click', function() {
-    const container = document.getElementById('calendarContainer');
-    container.classList.toggle('collapse');
-    if (!container.classList.contains('collapse')) {
-      this.innerHTML = '<i class="bi bi-x-circle me-2"></i>Hide sessions';
-    } else {
-      this.innerHTML = '<i class="bi bi-calendar-event me-2"></i>View our information sessions';
-    }
-  });
 </script>
