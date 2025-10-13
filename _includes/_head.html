@@ -48,3 +48,31 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="/assets/js/search.js" defer></script>
+
+{% if search != false %}
+  <!-- Indexed by Pagefind -->
+  <div data-pagefind-body class="visually-hidden" aria-hidden="true"
+       style="position:absolute;left:-9999px;opacity:0;">
+    <h1 data-pagefind-meta="title">{{ title }}</h1>
+    <p data-pagefind-meta="description">
+      {% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}
+    </p>
+  </div>
+
+  {% if tags and tags.length %}
+  <ul class="visually-hidden" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+    {% for t in tags %}
+      <li data-pagefind-meta="tags">{{ t }}</li>
+      <li data-pagefind-filter="tags">{{ t }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if preview_image %}
+
+  <div class="visually-hidden" aria-hidden="true"
+       style="position:absolute;left:-9999px;opacity:0;">
+  <span data-pagefind-meta="preview_image">{{ preview_image }}</span>
+  </div>
+{% endif %}
+
+{% endif %}
