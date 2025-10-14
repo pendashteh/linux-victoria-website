@@ -7,16 +7,6 @@
     "image": "/assets/images/SFD-2025.webp"
   },
   {
-    "title": "LAIT Night Chats",
-    "date": "Tuesday Night Discussions",
-    "time": "21:00 - 22:00 AEST",
-    "location": "Electron Workshop eVenue",
-    "link": "/posts/lait-night-chat-linux-and-ai",
-    "join_link": "https://electronworkshop.com.au/goto/venue",
-    "image": "/assets/images/LAIT_night_banner.webp",
-    "past": false
-  },
-  {
     "title": "Town Hall Meeting - October",
     "date": "2025-10-14",
     "time": "19:00 to 21:00 AEST",
@@ -24,6 +14,16 @@
     "link": "/posts/2025-10-14_Town-Hall-Meeting-October",
     "join_link": "https://electronworkshop.com.au/goto/venue",
     "image": "/assets/images/Town-Hall-Meeting-October2025.webp",
+    "past": false
+  },
+  {
+    "title": "LAIT Night Chats",
+    "date": "Tuesday Night Discussions",
+    "time": "21:00 - 22:00 AEST",
+    "location": "Electron Workshop eVenue",
+    "link": "/posts/lait-night-chat-linux-and-ai",
+    "join_link": "https://electronworkshop.com.au/goto/venue",
+    "image": "/assets/images/LAIT_night_banner.webp",
     "past": false
   },
   {
