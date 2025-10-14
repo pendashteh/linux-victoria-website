@@ -7,6 +7,10 @@ tags: ["Volunteer"]
     .mauticform_wrapper {
         margin: 0px !important;
     }
+    
+    #successMessage {
+        display: none;
+    }
 </style>
 
 <section class="bg-body mt-5">
@@ -20,6 +24,18 @@ tags: ["Volunteer"]
                     notifications anytime.
                     After expressing interest, you'll attend an information session for training and login details.
                 </p>
+
+                <!-- Success Message (Initially Hidden) -->
+                <div id="successMessage" class="alert alert-success shadow-sm" role="alert">
+                    <h4 class="alert-heading d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill me-2"></i>
+                        Thank You!
+                    </h4>
+                    <p class="mb-0">
+                        Your expression of interest has been recieved. An email with a copy of the form has been sent to you. 
+                        To get started, please attend one of our information sessions listed below.
+                    </p>
+                </div>
 
                 <script type="text/javascript" src="//engage.electronworkshop.com.au/form/generate.js?id=3"></script>
             </div>
