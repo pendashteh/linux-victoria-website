@@ -1,12 +1,5 @@
 [
   {
-    "title": "Software Freedom Day",
-    "date": "2025-09-20",
-    "time": "12PM - 3PM AEST",
-    "location": "In-Person: MelbPC Office, Moorabbin \n Online: Electron Workshop eVenue",
-    "image": "/assets/images/SFD-2025.webp"
-  },
-  {
     "title": "Town Hall Meeting - October",
     "date": "2025-10-14",
     "time": "19:00 to 21:00 AEST",
@@ -14,7 +7,14 @@
     "link": "/posts/2025-10-14_Town-Hall-Meeting-October",
     "join_link": "https://electronworkshop.com.au/goto/venue",
     "image": "/assets/images/Town-Hall-Meeting-October2025.webp",
-    "past": false
+    "past": ""
+  },
+  {
+    "title": "Software Freedom Day",
+    "date": "2025-09-20",
+    "time": "12PM - 3PM AEST",
+    "location": "In-Person: MelbPC Office, Moorabbin \n Online: Electron Workshop eVenue",
+    "image": "/assets/images/SFD-2025.webp"
   },
   {
     "title": "LAIT Night Chats",
