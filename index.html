@@ -7,31 +7,32 @@ layout: layout.html
   <div class="container-fluid px-0">
 
     <!-- Filter upcoming events -->
-{% assign upcomingCards = "" | split: "" %}
-{% assign currentTimestamp = "now" | date: "%s" %}
+    {% assign upcomingCards = "" | split: "" %}
+    {% assign currentTimestamp = "now" | date: "%s" %}
 
-{% for card in homeCards %}
-  <!-- If explicitly marked as not past, always include in upcoming -->
-  {% if card.past == false or card.past == 'false' %}
+    {% for card in homeCards %}
+    <!-- If explicitly marked as not past, always include in upcoming -->
+    {% if card.past == false or card.past == 'false' %}
     {% assign upcomingCards = upcomingCards | push: card %}
     {% continue %}
-  {% endif %}
-  
-  <!-- Skip if explicitly marked as past -->
-  {% if card.past == true %}
+    {% endif %}
+
+    <!-- Skip if explicitly marked as past -->
+    {% if card.past == true %}
     {% continue %}
-  {% endif %}
-  
-  <!-- For cards without explicit past flag, use date logic -->
-  {% if card.date == nil or card.date contains "Date to be announced" or card.date contains "Tuesday Night Discussions" %}
+    {% endif %}
+
+    <!-- For cards without explicit past flag, use date logic -->
+    {% if card.date == nil or card.date contains "Date to be announced" or card.date contains "Tuesday Night
+    Discussions" %}
     {% assign upcomingCards = upcomingCards | push: card %}
-  {% else %}
+    {% else %}
     {% assign cardTimestamp = card.date | date: "%s" %}
     {% if cardTimestamp >= currentTimestamp %}
-      {% assign upcomingCards = upcomingCards | push: card %}
+    {% assign upcomingCards = upcomingCards | push: card %}
     {% endif %}
-  {% endif %}
-{% endfor %}
+    {% endif %}
+    {% endfor %}
 
     {% if upcomingCards.size > 0 %}
     <!-- Upcoming Events -->
@@ -120,32 +121,26 @@ layout: layout.html
     <br><br>
     {% endif %}
 
-    
-<!-- Filter past events (limit to 3 for home page) -->
-{% assign pastCards = "" | split: "" %}
-{% assign pastCardCount = 0 %}
 
-{% for card in homeCards %}
-  {% if pastCardCount < 3 %}
-    <!-- Skip if explicitly marked as not past -->
-    {% if card.past == false or card.past == 'false' %}
+    <!-- Filter past events (limit to 3 for home page) -->
+    {% assign pastCards = "" | split: "" %}
+    {% assign pastCardCount = 0 %}
+
+    {% for card in homeCards %}
+    {% if pastCardCount < 3 %} <!-- Skip if explicitly marked as not past -->
+      {% if card.past == false or card.past == 'false' %}
       {% continue %}
-    {% endif %}
-    
-    {% if card.past == true %}
+      {% endif %}
+
+      {% if card.past == true %}
       {% assign pastCards = pastCards | push: card %}
       {% assign pastCardCount = pastCardCount | plus: 1 %}
-    {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday Night Discussions" %}
+      {% elsif card.date != nil and card.date != "Date to be announced" and card.date != "Linux & AI Tuesday Night
+      Discussions" %}
       {% assign cardTimestamp = card.date | date: "%s" %}
-      {% if cardTimestamp < currentTimestamp %}
-        {% assign pastCards = pastCards | push: card %}
-        {% assign pastCardCount = pastCardCount | plus: 1 %}
-      {% endif %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-        
-        {% if pastCards.size>0 %}
+      {% if cardTimestamp < currentTimestamp %} {% assign pastCards=pastCards | push: card %} {% assign
+        pastCardCount=pastCardCount | plus: 1 %} {% endif %} {% endif %} {% endif %} {% endfor %} {% if pastCards.size>0
+        %}
         <!-- Previous Events and Posts (no featured styling here) -->
         <section class="container">
           <div
