@@ -3,7 +3,7 @@ layout: "posts_embed_layout.html"
 title: November Town Hall Meeting - Linux Victoria
 description: Join us for Linux Victoria's monthly town hall meeting.
 image: "/assets/images/Town-Hall-Meeting-November2025.webp"
-tags: ["Upcoming", "Event", "Town Hall", "2025"]
+tags: ["Event", "Town Hall", "2025"]
 ---
 
 ## Linux Town Hall
