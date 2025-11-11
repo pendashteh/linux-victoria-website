@@ -37,6 +37,6 @@ We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, manage
 
 ### Schedule
 
-19:00 Meet and greet
-19:30 Opening
-20:30 Closure
+- 19:00 Meet and greet
+- 19:30 Opening
+- 20:30 Closure
