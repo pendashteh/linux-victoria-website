@@ -27,6 +27,7 @@ Come be part of the conversation as we work to strengthen and expand Victoria's 
 - Canberra Travel and Accomodation
 - Linux Support announcement
 - Linux & AI Season 2
+- AGM Planning
 
 ## How To Join
 
