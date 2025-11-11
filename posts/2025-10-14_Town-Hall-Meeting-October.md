@@ -50,3 +50,15 @@ We use a self-hosted BBB instance for this meeting.
 
 
 
+
+<div class="mt-3">
+    <a class="btn btn-outline-primary" href="/assets/events/Linux-Victoria-Town-Hall.ics"
+        download>
+        Add to Calendar (download .ics)
+    </a>
+    <a class="btn btn-outline-primary me-2"
+        href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NG8ybzJ0aDlvOW9iajNycHVqMXI3c25zM2cgOWtxZWQ3cWMyczVrYjE5ZWtpcHRsOHZuMDhAZw&tmsrc=9kqed7qc2s5kb19ekiptl8vn08%40group.calendar.google.com"
+        target="_blank" rel="noopener">
+        Add to Google Calendar
+    </a>
+</div>
