@@ -9,10 +9,9 @@ tags: ["Upcoming","Event", "AGM", "2025", "Hybrid"]
 
 ## Linux Victoria LUV Annual General Meeting
 
-Date: Sunday, December 7th, 2025   
-Time: 3:00 PM – 9:00 PM AEDT (Melbourne, Australia Time)   
-Location: Inspire9 Level 1/41-43 Stewart St, Richmond VIC 3121   
-Google maps link to location: <https://maps.app.goo.gl/xGpFyuZr7Q8y84jc7>
+Date: Tuesday, December 9th, 2025   
+Time: 7:00 PM – 9:00 PM AEDT (Melbourne, Australia Time)  
+Location: EWorkshop eVenue 
 
 ### Agenda
 
@@ -22,19 +21,18 @@ Google maps link to location: <https://maps.app.goo.gl/xGpFyuZr7Q8y84jc7>
 - Questions to directors
 - Election of directors
 - Meeting Close
-- Head to nearby restaurant for Christmas party!
 
 ### How To Join
 To receive event updates, make sure to register:   
 <https://luma.com/5uurf4cs>
 
 
-The AGM will be streamed online. Use the link below to join on the day:   
+Link to join:
 [https://electronworkshop.com.au/goto/venue](https://electronworkshop.com.au/goto/venue)  
 We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, managed by Electron Workshop and hosted by Serversaurus.
 
 ### Schedule
 
-- 15:00 Meet and greet
-- 15:30 Opening
-- 17:30 Closure and head to restaurant
+- 19:00 Meet and greet
+- 19:30 Opening
+- 21:30 Closure
