@@ -1,5 +1,14 @@
 [
   {
+    "title": "Try out different distro's online!",
+    "date": "2025-11-30",
+    "location": "We rebuilt a donated PC into a Proxmox playground where you can spin up disposable Linux distros, test open-weight LLMs, and explore local AI tools.",
+    "link": "/posts/2025-11-30_proxmox-server",
+    "join_link": "",
+    "image": "/assets/images/pve-penguins-beach-server.png",
+    "past": true
+  },
+  {
     "title": "Linux Victoria LUV Annual General Meeting 2025",
     "date": "2025-12-09",
     "time": "19:00 to 21:00 AEST",
