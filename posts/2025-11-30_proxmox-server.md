@@ -3,7 +3,7 @@ title: "Setting Up the Proxmox Playground: From Donation to Disposable VMs"
 author: Sophie
 description: "How we rebuilt a donated PC into a Proxmox-based sandbox for testing Linux distros, running open-weight LLMs, and creating disposable VM environments accessible through Tailscale or future one-click web buttons."
 tags: ["Resource", "Distribution", "Distros"]
-image: "/assets/images/pve-penguins-beach-server.png"
+preview_image: "http://linuxvictoria.org/assets/images/pve-penguins-beach-server.png"
 ---
 
 ## {{title}}
