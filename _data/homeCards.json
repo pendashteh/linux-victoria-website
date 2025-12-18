@@ -4,11 +4,11 @@
     "date": "2025-12-21",
     "time": "2:00PM - 4:00PM AEST",
     "location": "In Preson: Skill Studio, Canberra \n Online: Electron Workshop eVenue",
-    "link": "https://luma.com/aqac75re",
+    "link": "/posts/2025-12-21_create-a-website-you-fully-own",
     "join_link": "https://electronworkshop.com.au/goto/venue",
-    "image": "https://skillstudio.com.au/assets/uploads/create-website-workshop-v102.webp",
+    "image": "/assets/images/create-website-workshop-v102.webp",
     "past": false,
-    "cta": "Read More <i class='bi bi-arrow-up-right-square'></i>"
+    "cta": "Read More"
   },
   {
     "title": "Linux Victoria LUV Annual General Meeting 2025",
