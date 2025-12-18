@@ -1,12 +1,14 @@
 [
   {
-    "title": "Try out different distro's online!",
-    "date": "2025-11-30",
-    "location": "We rebuilt a donated PC into a Proxmox playground where you can spin up disposable Linux distros, test open-weight LLMs, and explore local AI tools.",
-    "link": "/posts/2025-11-30_proxmox-server",
-    "join_link": "",
-    "image": "/assets/images/pve-penguins-beach-server.png",
-    "past": true
+    "title": "Workshop: Create a Website you Fully Own",
+    "date": "2025-12-21",
+    "time": "2:00PM - 4:00PM AEST",
+    "location": "In Preson: Skill Studio, Canberra \n Online: Electron Workshop eVenue",
+    "link": "https://luma.com/aqac75re",
+    "join_link": "https://electronworkshop.com.au/goto/venue",
+    "image": "https://skillstudio.com.au/assets/uploads/create-website-workshop-v102.webp",
+    "past": false,
+    "cta": "Read More <i class='bi bi-arrow-up-right-square'></i>"
   },
   {
     "title": "Linux Victoria LUV Annual General Meeting 2025",
@@ -16,7 +18,25 @@
     "link": "/posts/2025-12-07_AGM-and-Christmas-Party",
     "join_link": "https://electronworkshop.com.au/goto/venue",
     "image": "/assets/images/Town-Hall-Meeting-AGM2025-tmb.webp",
-    "past": false
+    "past": true
+  },
+  {
+    "title": "LAIT Night Chats - Season 1",
+    "date": "2025-10-7",
+    "location": "Thank you to those that joined us for Season 1! Great chats were had on Linux and AI, we managed to run a session every week on Tuesday from July to September. Keep an eye out for Season 2 in the new year!",
+    "link": "/posts/lait-night-chat-linux-and-ai-season-1",
+    "join_link": "https://electronworkshop.com.au/goto/venue",
+    "image": "/assets/images/LAIT_night_banner.webp",
+    "past": true
+  },
+  {
+    "title": "Try out different distro's online!",
+    "date": "2025-11-30",
+    "location": "We rebuilt a donated PC into a Proxmox playground where you can spin up disposable Linux distros, test open-weight LLMs, and explore local AI tools.",
+    "link": "/posts/2025-11-30_proxmox-server",
+    "join_link": "",
+    "image": "/assets/images/pve-penguins-beach-server.png",
+    "past": true
   },
   {
     "title": "Town Hall Meeting - November",
@@ -44,16 +64,6 @@
     "time": "12PM - 3PM AEST",
     "location": "In-Person: MelbPC Office, Moorabbin \n Online: Electron Workshop eVenue",
     "image": "/assets/images/SFD-2025.webp"
-  },
-  {
-    "title": "LAIT Night Chats",
-    "date": "Tuesday Night Discussions",
-    "time": "21:00 - 22:00 AEST",
-    "location": "Electron Workshop eVenue",
-    "link": "/posts/lait-night-chat-linux-and-ai",
-    "join_link": "https://electronworkshop.com.au/goto/venue",
-    "image": "/assets/images/LAIT_night_banner.webp",
-    "past": false
   },
   {
     "title": "Town Hall Meeting - September",

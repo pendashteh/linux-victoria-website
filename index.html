@@ -253,6 +253,9 @@ layout: layout.html
                     <h2 class="mb-0 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
                     <script type="text/javascript"
                       src="//engage.electronworkshop.com.au/form/generate.js?id=1"></script>
+                    <div id="mautic-loading" style="display:none; text-align:center; margin:10px 0;">
+                      <span>Submitting...</span>
+                    </div>
                   </div>
                 </div>
 
@@ -320,4 +323,20 @@ layout: layout.html
       }, false)
     })
   })()
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('mauticform_linuxvictorianewsletterform');
+    const loader = document.getElementById('mautic-loading');
+
+    form.addEventListener('submit', function () {
+      // Show loading message/spinner
+      loader.style.display = 'block';
+
+      // Optional: disable the submit button to prevent double submissions
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+    });
+  });
 </script>
