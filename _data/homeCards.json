@@ -1,5 +1,35 @@
 [
   {
+    "title": "Meet LUV at Everything Open 2026",
+    "date": "2026-01-22",
+    "time": "LUV Breakfast",
+    "location": "Canberra, Australia",
+    "join_link": "https://electronworkshop.com.au/goto/venue",
+    "image": "/assets/images/luv-breakfast-eo-2026.webp",
+    "past": false,
+    "cta": "Read More"
+  },
+  {
+    "title": "LUV BBQ",
+    "date": "2026-01-31",
+    "time": "Time: TBC",
+    "location": "Location: TBC",
+    "join_link": "https://electronworkshop.com.au/goto/venue",
+    "image": "/assets/images/luv-bbq-2026.webp",
+    "past": false,
+    "cta": "Read More"
+  },
+  {
+    "title": "End of Year Recap",
+    "date": "2025-12-30",
+    "time": "",
+    "location": "As the year is closing, lets recap what Linux Victoria and LUV has been up to as well as the exciting plans brewing for 2026!",
+    "link": "/posts/2025-Newsletter-End-Of-Year-Recap",
+    "image": "/assets/images/end-of-year-recap-2025.webp",
+    "past": true,
+    "cta": "Read More"
+  },
+  {
     "title": "Workshop: Create a Website you Fully Own",
     "date": "2025-12-21",
     "time": "2:00PM - 4:00PM AEST",
@@ -7,7 +37,7 @@
     "link": "/posts/2025-12-21_create-a-website-you-fully-own",
     "join_link": "https://electronworkshop.com.au/goto/venue",
     "image": "/assets/images/create-website-workshop-v102.webp",
-    "past": false,
+    "past": true,
     "cta": "Read More"
   },
   {
