@@ -5,14 +5,14 @@ tags: ["Report", "2025"]
 ---
 
 
-# End of Year Repcap 2025
+# End of Year Recap 2025
 
 Author: Compiled by Sophie
 
 Below excerpt is taken from LUV Subcommittee report for the Linux Australia Annual Report, drafted by Alexar Pendashteh.
 
 Around a year ago, a small team put their hands up to take an active role
-in defining and shaping our local linux community here in Victoria.
+in defining and shaping our local Linux community here in Victoria.
 
 It is my honour as the lead organiser to share our journey, what we tried as
 a team and accomplished as a community and what we learned.  We are hoping
@@ -53,15 +53,15 @@ workshops that can be delivered by volunteers and reach a wider audience.
 We have a model for making this initiative financially sustainable which I
 encourage you to look at and provide feedback for.
 
-**ComputerBank Victoria**
+**Computerbank Victoria**
 
-ComputerBank Victoria is a technology charity with a beautiful business
+Computerbank Victoria is a technology charity with a beautiful business
 model. Refurbish second hand computers, install Linux and distribute back
 to those who need them at discounted price.
 
 Our Tech Help initiative, in partnership with Electron Workshop in 2024,
-helped us connect with ComputerBank and in 2025 we had the opportunity
-to bring the two community together in ComputerBank's farewell party at
+helped us connect with Computerbank and in 2025 we had the opportunity
+to bring the two community together in Computerbank's farewell party at
 their iconic North Melbourne location. Since then, Computerbank has moved
 to their new home in Broadmeadows. We are hoping to work more closely with
 the Computerbank in the coming year, especially since many are dealing with
@@ -84,7 +84,7 @@ report which is on our website.  This initiative is in its early stage and
 there is a great need for tech expertise.  If you're keen to learn please
 reach out or turn up to one of the Volunteer Info Sessions.
 
-**Honorable mentions**
+**Honourable mentions**
 
 It has all been the result of the work and support of many from our
 community (Sophie, Simon, Les, Terry, Andrew, Nate, Brian, Brok, Steve et
@@ -157,10 +157,10 @@ The first half will cover what Linux Victoria does and how to get involved, and 
 
 #### Quarterly
 
-**Collab (with interstate)**
+**Collab (with interstate)**   
 Once per quarter, we plan to organise an event in another state, in collaboration with the local Linux user group (and potentially other community groups) in that city or town.
 
-**Regional (Victoria)**
+**Regional (Victoria)**   
 Each quarter, we’ll also be running an in-person event in a regional town in Victoria. These events are intended to bring people together locally, while also encouraging members from Melbourne to travel out and take part.
 Over the year, these regional events will gradually build towards the Linux Regional Summit in August.
 
