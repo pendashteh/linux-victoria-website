@@ -24,12 +24,12 @@
             <div class="row">
                 <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <div class="card">
-
+                        {% if image %}
                         <div class="card-img-top overflow-hidden" style="height: 100%;">
                             <img src="{{ image }}" class="img-fluid w-100 h-100 object-fit-cover" alt="{{ alt }}"
                                 style="transition: transform 0.3s ease;">
                         </div>
-
+                        {% endif %}
                         <div class="card-body border-primary px-4 px-md-5 pt-2 pb-4 rounded-3 shadow">
                             {{ content }}
                         </div>
